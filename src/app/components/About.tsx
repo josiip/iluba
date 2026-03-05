@@ -58,8 +58,8 @@ export function About() {
               A two-founder studio that punches above its weight.
             </h2>
             <p className="text-[#555] leading-relaxed mb-5" style={{ lineHeight: 1.8 }}>
-              iluba is a boutique digital studio founded by{" "}
-              <strong className="text-[#0D0D0D]">Ana & Stefan</strong> — a designer and a developer
+              iluba. is an independent digital studio founded by{" "}
+              <strong className="text-[#0D0D0D]">Ivan & Josip</strong> — a developer and a designer
               who got tired of watching great products fail because of bad digital experiences.
             </p>
             <p className="text-[#555] leading-relaxed mb-5" style={{ lineHeight: 1.8 }}>

@@ -110,9 +110,8 @@ export function Hero() {
             }}
           >
             <span style={{ whiteSpace: "nowrap" }}>
-              Designing digital products that
-            </span>
-            <br />
+            Designing digital products <br /> that
+            </span>{" "}
             <span
               style={{
                 background:
