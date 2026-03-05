@@ -1,0 +1,37 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Calendly iframe */
+.calendly-inline-widget iframe {
+  border: none !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.12);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,92,53,0.5);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(255,92,53,0.15);
+  color: #FF5C35;
+}
