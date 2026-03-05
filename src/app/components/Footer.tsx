@@ -23,9 +23,6 @@ const links = {
   Contact: [
     { label: "Book a Call", href: "#contact" },
     { label: "hello@iluba.co", href: "mailto:hello@iluba.co", external: true },
-    { label: "LinkedIn", href: "#", external: true },
-    { label: "Dribbble", href: "#", external: true },
-    { label: "Instagram", href: "#", external: true },
   ],
 };
 
@@ -51,11 +48,10 @@ export function Footer() {
               </span>
             </div>
             <p className="text-[#888] text-sm leading-relaxed max-w-xs mb-6" style={{ lineHeight: 1.8 }}>
-              A boutique digital studio helping startups and modern businesses build exceptional online
-              products, brands, and growth strategies.
+            We help startups and modern businesses launch faster, convert better, and grow online — through strategic web design and custom digital products.
             </p>
             {/* Social links */}
-            <div className="flex items-center gap-3">
+            {/* <div className="flex items-center gap-3">
               {[
                 { Icon: Twitter, href: "#" },
                 { Icon: Linkedin, href: "#" },
@@ -70,7 +66,7 @@ export function Footer() {
                   <Icon size={15} />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Links */}
@@ -110,11 +106,11 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-[#F0F0F0] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[#AAA] text-sm">
-            © {new Date().getFullYear()} iluba digital studio. All rights reserved.
+            © {new Date().getFullYear()} iluba. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-[#AAA] text-sm hover:text-[#666] transition-colors">Privacy Policy</a>
-            <a href="#" className="text-[#AAA] text-sm hover:text-[#666] transition-colors">Terms of Service</a>
+            {/* <a href="#" className="text-[#AAA] text-sm hover:text-[#666] transition-colors">Privacy Policy</a>
+            <a href="#" className="text-[#AAA] text-sm hover:text-[#666] transition-colors">Terms of Service</a> */}
             <div className="flex items-center gap-1.5">
               <div className="w-2 h-2 rounded-full bg-green-500" style={{ animation: "pulse 2s ease-in-out infinite" }} />
               <span className="text-[#AAA] text-xs">Available for projects</span>

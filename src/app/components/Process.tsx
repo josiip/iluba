@@ -10,7 +10,7 @@ const steps = [
     bg: "rgba(255,92,53,0.08)",
     description:
       "We start by understanding your business, users, and goals through deep-dive workshops and research. No assumptions — just data and insight.",
-    duration: "Week 1–2",
+    duration: "Week 1",
     activities: ["Stakeholder interviews", "Competitive analysis", "User research", "Goal definition"],
   },
   {
@@ -21,7 +21,7 @@ const steps = [
     bg: "rgba(139,92,246,0.08)",
     description:
       "We translate discovery insights into wireframes, prototypes, and high-fidelity designs — with your feedback and collaboration at every step.",
-    duration: "Week 2–4",
+    duration: "Week 1-2",
     activities: ["Wireframing", "UI Design", "Prototype testing", "Iteration"],
   },
   {
@@ -32,8 +32,8 @@ const steps = [
     bg: "rgba(14,165,233,0.08)",
     description:
       "Our engineers bring the designs to life with clean, maintainable code. We keep you in the loop with weekly updates and staging previews.",
-    duration: "Week 4–8",
-    activities: ["Frontend development", "CMS integration", "Performance optimisation", "QA testing"],
+    duration: "Week 2-4",
+    activities: ["Frontend development", "API integration", "Performance optimisation", "QA testing"],
   },
   {
     number: "04",
@@ -43,7 +43,7 @@ const steps = [
     bg: "rgba(34,197,94,0.08)",
     description:
       "We handle deployment, set up analytics, and make sure everything is production-ready. Then we support you through and beyond launch.",
-    duration: "Week 8–10",
+    duration: "Week 4-6",
     activities: ["Deployment", "Analytics setup", "SEO handoff", "Post-launch support"],
   },
 ];
