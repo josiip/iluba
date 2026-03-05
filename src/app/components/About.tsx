@@ -74,8 +74,8 @@ export function About() {
             <div className="flex gap-8">
               {[
                 { value: "4+", label: "Years in business" },
-                { value: "40+", label: "Projects shipped" },
-                { value: "12+", label: "Countries" },
+                { value: "30+", label: "Projects shipped" },
+                { value: "5+", label: "Countries" },
               ].map((stat) => (
                 <div key={stat.value}>
                   <div
@@ -102,7 +102,16 @@ export function About() {
             <div className="grid grid-cols-2 gap-4 mb-6">
               {[
                 {
-                  name: "Ana Kovač",
+                  name: "Ivan Ljubić",
+                  role: "Co-founder · Dev Lead",
+                  bg: "rgba(13,13,13,0.04)",
+                  initials: "SI",
+                  color: "#0D0D0D",
+                  skills: ["React", "Next.js", "SEO", "Webflow"],
+                 image: "https://images.unsplash.com/photo-1762708550141-2688121b9ebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMHByb2Zlc3Npb25hbCUyMG1hbiUyMHBvcnRyYWl0JTIwY3JlYXRpdmV8ZW58MXx8fHwxNzcyNjMyMTA1fDA&ixlib=rb-4.1.0&q=80&w=400",
+                },
+                {
+                  name: "Josip Ljubić",
                   role: "Co-founder · Design Lead",
                   bg: "rgba(255,92,53,0.06)",
                   initials: "AK",
@@ -110,35 +119,19 @@ export function About() {
                   skills: ["UI/UX", "Brand", "Product"],
                   image: "https://images.unsplash.com/photo-1767439567636-792a76f6e4b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMHByb2Zlc3Npb25hbCUyMHdvbWFuJTIwcG9ydHJhaXQlMjBzdHVkaW98ZW58MXx8fHwxNzcyNjMyMTA1fDA&ixlib=rb-4.1.0&q=80&w=400",
                 },
-                {
-                  name: "Stefan Ilić",
-                  role: "Co-founder · Dev Lead",
-                  bg: "rgba(13,13,13,0.04)",
-                  initials: "SI",
-                  color: "#0D0D0D",
-                  skills: ["React", "Next.js", "SEO"],
-                  image: "https://images.unsplash.com/photo-1762708550141-2688121b9ebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMHByb2Zlc3Npb25hbCUyMG1hbiUyMHBvcnRyYWl0JTIwY3JlYXRpdmV8ZW58MXx8fHwxNzcyNjMyMTA1fDA&ixlib=rb-4.1.0&q=80&w=400",
-                },
               ].map((founder) => (
                 <div
                   key={founder.name}
                   className="rounded-2xl overflow-hidden border border-[#EBEBEB] bg-white"
                 >
-                  <div className="h-48 overflow-hidden">
-                    <img
-                      src={founder.image}
-                      alt={founder.name}
-                      className="w-full h-full object-cover object-top"
-                    />
-                  </div>
                   <div className="p-4">
                     <div
-                      className="text-[#0D0D0D] font-semibold text-sm mb-0.5"
+                      className="text-[#0D0D0D] font-semibold text-sm mb-2"
                       style={{ letterSpacing: "-0.01em" }}
                     >
                       {founder.name}
                     </div>
-                    <div className="text-[#888] text-xs mb-3">{founder.role}</div>
+                    <div className="text-[#888] text-xs mb-4">{founder.role}</div>
                     <div className="flex flex-wrap gap-1.5">
                       {founder.skills.map((s) => (
                         <span
