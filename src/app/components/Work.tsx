@@ -77,7 +77,7 @@ export function Work() {
     <section
       id="work"
       ref={ref}
-      className="py-28 px-6"
+      className="py-20 md:py-28 px-6"
       style={{ background: "#FAFAF8" }}
     >
       <div className="max-w-7xl mx-auto">
@@ -100,7 +100,80 @@ export function Work() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Mobile: horizontal scroll */}
+        <div className="md:hidden -mx-6 px-6 overflow-x-auto scrollbar-hide">
+          <div className="flex gap-4 pb-4" style={{ width: "max-content" }}>
+            {projects.map((project, i) => (
+              <div
+                key={project.id}
+                className="group relative overflow-hidden rounded-2xl border border-[#EBEBEB] bg-white cursor-pointer hover:shadow-2xl transition-all duration-400"
+                onClick={() => setSelected(project)}
+                style={{
+                  width: "85vw",
+                  maxWidth: "380px",
+                  opacity: visible ? 1 : 0,
+                  transform: visible ? "translateY(0)" : "translateY(40px)",
+                  transition: `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s, box-shadow 0.3s ease`,
+                }}
+              >
+                {/* Image */}
+                <div className="relative h-60 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: `linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)`,
+                    }}
+                  />
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+                    <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-lg">
+                      <ArrowUpRight size={16} color="#0D0D0D" />
+                    </div>
+                  </div>
+                  <div className="absolute bottom-4 left-4">
+                    <span className="text-white/80 text-xs font-medium">{project.year}</span>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2.5 py-1 rounded-full text-xs font-medium"
+                        style={{ background: project.bg, color: project.color }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h3
+                    className="text-[#0D0D0D] mb-1"
+                    style={{ fontSize: "1.3rem", fontWeight: 700, letterSpacing: "-0.02em" }}
+                  >
+                    {project.title}
+                  </h3>
+                  <p className="text-[#777] text-sm mb-4 leading-relaxed">{project.description}</p>
+                  <div
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold"
+                    style={{ background: project.bg, color: project.color }}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: project.color }} />
+                    {project.result}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: grid */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, i) => (
             <div
               key={project.id}

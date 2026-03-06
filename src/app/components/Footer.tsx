@@ -44,7 +44,7 @@ export function Footer() {
                 il
               </div>
               <span className="text-[#0D0D0D] font-bold" style={{ fontSize: "1.1rem" }}>
-                iluba
+                iluba.
               </span>
             </div>
             <p className="text-[#888] text-sm leading-relaxed max-w-xs mb-6" style={{ lineHeight: 1.8 }}>

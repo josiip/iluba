@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useReveal } from "../hooks/useReveal";
 import { Check, Zap, Building2, Sparkles } from "lucide-react";
 
@@ -68,16 +69,17 @@ const plans = [
 
 export function Pricing() {
   const { ref, visible } = useReveal();
+  const [selectedPlan, setSelectedPlan] = useState<number>(1); // Default to Growth (index 1)
 
   const scrollTo = (id: string) => {
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section id="pricing" ref={ref} className="py-28 px-6 bg-white">
+    <section id="pricing" ref={ref} className="py-20 md:py-28 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <div
-          className="mb-16 text-center transition-all duration-700"
+          className="mb-16 transition-all duration-700"
           style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(32px)" }}
         >
           <div
@@ -86,18 +88,128 @@ export function Pricing() {
           >
             Pricing
           </div>
+
           <h2
-            className="text-[#0D0D0D]"
-            style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 800, lineHeight: 1.15, letterSpacing: "-0.025em" }}
+            className="text-[#0D0D0D] max-w-xl"
+            style={{
+              fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+              fontWeight: 800,
+              lineHeight: 1.15,
+              letterSpacing: "-0.025em",
+            }}
           >
             Simple, transparent pricing.
           </h2>
-          <p className="text-[#666] mt-4 max-w-lg mx-auto" style={{ fontSize: "1.05rem", lineHeight: 1.7 }}>
+
+          <p
+            className="text-[#666] mt-4 max-w-lg"
+            style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
+          >
             No hidden fees, no surprises. Invest confidently in your digital growth.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        {/* Mobile: Tabbed pricing */}
+        <div className="md:hidden">
+          {/* Tabs */}
+          <div className="flex gap-2 mb-6 p-1.5 bg-[#F5F5F5] rounded-xl">
+            {plans.map((plan, i) => (
+              <button
+                key={plan.name}
+                onClick={() => setSelectedPlan(i)}
+                className="flex-1 py-3 px-4 rounded-lg text-sm font-semibold transition-all duration-200 relative"
+                style={{
+                  background: selectedPlan === i ? "white" : "transparent",
+                  color: selectedPlan === i ? "#0D0D0D" : "#888",
+                  boxShadow: selectedPlan === i ? "0 2px 8px rgba(0,0,0,0.06)" : "none",
+                }}
+              >
+                {plan.name}
+                {plan.popular && selectedPlan === i && (
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full text-[9px] font-bold text-white whitespace-nowrap"
+                    style={{ background: "linear-gradient(135deg, #FF5C35 0%, #FF8A65 100%)" }}>
+                    Popular
+                  </div>
+                )}
+              </button>
+            ))}
+          </div>
+
+          {/* Selected plan card */}
+          {plans.map((plan, i) => {
+            const Icon = plan.icon;
+            const isDark = plan.popular;
+
+            return (
+              <div
+                key={plan.name}
+                className="relative rounded-2xl p-8 border transition-all duration-300"
+                style={{
+                  display: selectedPlan === i ? "flex" : "none",
+                  flexDirection: "column",
+                  background: isDark ? "#0D0D0D" : "white",
+                  borderColor: isDark ? "#0D0D0D" : "#EBEBEB",
+                  opacity: visible ? 1 : 0,
+                  transform: visible ? "translateY(0)" : "translateY(40px)",
+                  transition: `opacity 0.6s ease, transform 0.6s ease`,
+                }}
+              >
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center mb-5"
+                  style={{ background: isDark ? "rgba(255,255,255,0.1)" : plan.bg }}
+                >
+                  <Icon size={18} color={isDark ? "white" : plan.color} strokeWidth={2} />
+                </div>
+
+                <div className={isDark ? "text-white/60" : "text-[#888]"} style={{ fontSize: "0.8rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "4px" }}>
+                  {plan.name}
+                </div>
+                <div
+                  className={`mb-1 ${isDark ? "text-white" : "text-[#0D0D0D]"}`}
+                  style={{ fontSize: "2.5rem", fontWeight: 800, letterSpacing: "-0.03em" }}
+                >
+                  {plan.price}
+                </div>
+                <div className={`text-xs mb-4 ${isDark ? "text-white/40" : "text-[#AAA]"}`}>{plan.period}</div>
+                <p className={`text-sm mb-6 leading-relaxed ${isDark ? "text-white/60" : "text-[#666]"}`}>
+                  {plan.tagline}
+                </p>
+
+                <div className="flex-1 space-y-3 mb-8">
+                  {plan.features.map((feature) => (
+                    <div key={feature} className="flex items-start gap-3">
+                      <div
+                        className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                        style={{ background: isDark ? "rgba(255,255,255,0.1)" : "rgba(34,197,94,0.1)" }}
+                      >
+                        <Check size={11} color={isDark ? "white" : "#22C55E"} strokeWidth={3} />
+                      </div>
+                      <span className={`text-sm ${isDark ? "text-white/75" : "text-[#444]"}`}>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <button
+                  onClick={() => scrollTo("#contact")}
+                  className="w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 hover:opacity-90 active:scale-[0.98]"
+                  style={{
+                    background: isDark
+                      ? "linear-gradient(135deg, #FF5C35 0%, #FF8A65 100%)"
+                      : plan.popular
+                      ? "#0D0D0D"
+                      : "#0D0D0D",
+                    color: "white",
+                  }}
+                >
+                  {plan.cta}
+                </button>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Desktop: Grid */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {plans.map((plan, i) => {
             const Icon = plan.icon;
             const isDark = plan.popular;
@@ -177,14 +289,53 @@ export function Pricing() {
           })}
         </div>
 
+        {/* Standalone services CTA */}
         <div
-          className="mt-12 text-center text-sm text-[#888]"
-          style={{ opacity: visible ? 1 : 0, transition: "opacity 0.6s ease 0.5s" }}
+          className="mt-16 text-center rounded-2xl border border-[#FFE8E0] p-12 relative overflow-hidden"
+          style={{ 
+            opacity: visible ? 1 : 0, 
+            transition: "opacity 0.6s ease 0.5s",
+            background: "linear-gradient(135deg, #FFF9F7 0%, #FFFBF9 50%, #FFF5F0 100%)",
+            boxShadow: "0 4px 24px rgba(255, 92, 53, 0.08)"
+          }}
         >
-          All prices exclude VAT. Custom project scoping available upon request. 
-          <button onClick={() => scrollTo("#contact")} className="text-[#FF5C35] font-medium hover:underline ml-1">
-            Book a free discovery call →
-          </button>
+          {/* Decorative elements */}
+          <div 
+            className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-30 blur-3xl"
+            style={{ background: "#FF5C35" }}
+          />
+          <div 
+            className="absolute bottom-0 left-0 w-24 h-24 rounded-full opacity-20 blur-2xl"
+            style={{ background: "#FF5C35" }}
+          />
+          
+          <div className="relative z-10">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full mb-5" style={{ background: "rgba(255, 92, 53, 0.1)" }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#FF5C35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="#FF5C35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="#FF5C35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <p className="text-[#0D0D0D] mb-7" style={{ fontSize: "1.15rem", lineHeight: 1.7 }}>
+              Looking for design, development or marketing only?<br />
+              <span style={{ fontWeight: 600 }}>We also offer standalone services.</span>
+            </p>
+            <button
+              onClick={() => scrollTo("#contact")}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-base transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]"
+              style={{
+                background: "#FF5C35",
+                color: "white",
+                boxShadow: "0 4px 16px rgba(255, 92, 53, 0.3)"
+              }}
+            >
+              Get a custom quote
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 12L10 8L6 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>

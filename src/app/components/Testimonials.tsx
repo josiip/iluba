@@ -4,7 +4,7 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "iluba completely transformed how we present our product online. Our conversion rate jumped 35% within the first month after launch. They're the best investment we've made this year.",
+      "iluba. completely transformed how we present our product online. Our conversion rate jumped 35% within the first month after launch. They're the best investment we've made this year.",
     name: "Marko Petrić",
     role: "CEO",
     company: "Velo Finance",
@@ -14,7 +14,7 @@ const testimonials = [
   },
   {
     quote:
-      "Working with the iluba team was a breath of fresh air. They pushed back when our instincts were wrong, brought incredible attention to detail, and delivered on time. Rare.",
+      "Working with the iluba. team was a breath of fresh air. They pushed back when our instincts were wrong, brought incredible attention to detail, and delivered on time. Rare.",
     name: "Sara Jensen",
     role: "Head of Product",
     company: "Trove Platform",
@@ -34,7 +34,7 @@ const testimonials = [
   },
   {
     quote:
-      "Our new brand identity is exactly what we needed to compete with the big players. iluba understood our market immediately and delivered a brand we're genuinely proud of.",
+      "Our new brand identity is exactly what we needed to compete with the big players. iluba. understood our market immediately and delivered a brand we're genuinely proud of.",
     name: "Amina Boussaid",
     role: "Co-founder & CMO",
     company: "Nomi Brand",
@@ -54,7 +54,7 @@ const testimonials = [
   },
   {
     quote:
-      "The SEO work iluba did has paid for itself many times over. Organic traffic is up, leads are qualified, and we're ranking for terms we never thought possible 6 months ago.",
+      "The SEO work iluba. did has paid for itself many times over. Organic traffic is up, leads are qualified, and we're ranking for terms we never thought possible 6 months ago.",
     name: "Priya Sharma",
     role: "Growth Lead",
     company: "Renova Group",
@@ -71,7 +71,7 @@ export function Testimonials() {
     <section
       id="testimonials"
       ref={ref}
-      className="py-28 px-6"
+      className="py-20 md:py-28 px-6"
       style={{ background: "#FAFAF8" }}
     >
       <div className="max-w-7xl mx-auto">
@@ -96,7 +96,62 @@ export function Testimonials() {
           </p>
         </div>
 
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+        {/* Mobile: horizontal scroll */}
+        <div className="md:hidden -mx-6 px-6 overflow-x-auto scrollbar-hide">
+          <div className="flex gap-4 pb-4" style={{ width: "max-content" }}>
+            {testimonials.map((t, i) => (
+              <div
+                key={t.name}
+                className="bg-white rounded-2xl p-6 border border-[#EBEBEB] hover:shadow-lg transition-all duration-300"
+                style={{
+                  width: "85vw",
+                  maxWidth: "360px",
+                  opacity: visible ? 1 : 0,
+                  transform: visible ? "translateY(0)" : "translateY(40px)",
+                  transition: `opacity 0.6s ease ${i * 0.08}s, transform 0.6s ease ${i * 0.08}s, box-shadow 0.3s ease`,
+                }}
+              >
+                {/* Stars */}
+                <div className="flex gap-0.5 mb-4">
+                  {[...Array(5)].map((_, j) => (
+                    <Star key={j} size={13} fill="#FF5C35" color="#FF5C35" />
+                  ))}
+                </div>
+
+                {/* Quote */}
+                <p className="text-[#333] text-sm leading-relaxed mb-5" style={{ lineHeight: 1.75 }}>
+                  "{t.quote}"
+                </p>
+
+                {/* Result badge */}
+                <div
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-5"
+                  style={{ background: `${t.color}12`, color: t.color }}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ background: t.color }} />
+                  {t.result}
+                </div>
+
+                {/* Author */}
+                <div className="flex items-center gap-3">
+                  <div
+                    className="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
+                    style={{ background: t.color }}
+                  >
+                    {t.avatar}
+                  </div>
+                  <div>
+                    <div className="text-[#0D0D0D] text-sm font-semibold">{t.name}</div>
+                    <div className="text-[#888] text-xs">{t.role} — {t.company}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: masonry grid */}
+        <div className="hidden md:block columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
           {testimonials.map((t, i) => (
             <div
               key={t.name}

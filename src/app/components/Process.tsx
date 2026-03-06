@@ -52,7 +52,7 @@ export function Process() {
   const { ref, visible } = useReveal();
 
   return (
-    <section id="process" ref={ref} className="py-28 px-6 bg-white">
+    <section id="process" ref={ref} className="py-20 md:py-28 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <div
           className="mb-16 transition-all duration-700"
@@ -133,40 +133,52 @@ export function Process() {
           })}
         </div>
 
-        {/* Mobile: vertical steps */}
-        <div className="md:hidden space-y-6">
-          {steps.map((step, i) => {
-            const Icon = step.icon;
-            return (
-              <div
-                key={step.number}
-                className="flex gap-5 p-6 rounded-2xl border border-[#F0F0F0]"
-                style={{
-                  opacity: visible ? 1 : 0,
-                  transform: visible ? "translateY(0)" : "translateY(30px)",
-                  transition: `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`,
-                }}
-              >
-                <div>
+        {/* Mobile: horizontal scroll */}
+        <div className="md:hidden -mx-6 px-6 overflow-x-auto scrollbar-hide">
+          <div className="flex gap-4 pb-4" style={{ width: "max-content" }}>
+            {steps.map((step, i) => {
+              const Icon = step.icon;
+              return (
+                <div
+                  key={step.number}
+                  className="flex flex-col p-6 rounded-2xl border border-[#F0F0F0] bg-white"
+                  style={{
+                    width: "85vw",
+                    maxWidth: "340px",
+                    opacity: visible ? 1 : 0,
+                    transform: visible ? "translateY(0)" : "translateY(30px)",
+                    transition: `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`,
+                  }}
+                >
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
                     style={{ background: step.bg }}
                   >
                     <Icon size={18} color={step.color} strokeWidth={2} />
                   </div>
-                </div>
-                <div>
-                  <div className="text-xs font-bold tracking-widest uppercase mb-0.5" style={{ color: step.color }}>
-                    {step.number} · {step.duration}
+                  <div className="text-xs font-bold tracking-widest uppercase mb-1" style={{ color: step.color }}>
+                    {step.number}
                   </div>
-                  <h3 className="text-[#0D0D0D] mb-1" style={{ fontSize: "1.1rem", fontWeight: 700 }}>
+                  <h3 className="text-[#0D0D0D] mb-2" style={{ fontSize: "1.2rem", fontWeight: 700 }}>
                     {step.title}
                   </h3>
-                  <p className="text-[#777] text-sm leading-relaxed">{step.description}</p>
+                  <p className="text-[#777] text-sm leading-relaxed mb-4">{step.description}</p>
+                  <div className="text-xs text-[#999] font-medium mb-3">{step.duration}</div>
+                  <ul className="space-y-1.5">
+                    {step.activities.map((a) => (
+                      <li key={a} className="flex items-center gap-2 text-xs text-[#666]">
+                        <span
+                          className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                          style={{ background: step.color }}
+                        />
+                        {a}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

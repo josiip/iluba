@@ -44,9 +44,9 @@ const faqs = [
       "Yes. We offer technical SEO audits, on-page optimisation, content strategy, and link-building as standalone services. If you already have a website and just want to improve organic visibility, we can scope an SEO project that fits your budget and goals. Book a call to get a free preliminary audit.",
   },
   {
-    question: "What makes iluba different from a traditional agency?",
+    question: "What makes iluba. different from a traditional agency?",
     answer:
-      "At iluba, you always work directly with the founders — never account managers or junior designers. This means faster decisions, higher quality, and a genuine partnership. We're small by design: selective about the clients we take on so we can do exceptional work for every one of them.",
+      "At iluba. you always work directly with the founders — never account managers or junior designers. This means faster decisions, higher quality, and a genuine partnership. We're small by design: selective about the clients we take on so we can do exceptional work for every one of them.",
   },
 ];
 

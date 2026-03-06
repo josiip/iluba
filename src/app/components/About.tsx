@@ -63,7 +63,7 @@ export function About() {
               who got tired of watching great products fail because of bad digital experiences.
             </p>
             <p className="text-[#555] leading-relaxed mb-5" style={{ lineHeight: 1.8 }}>
-              We started iluba to offer what the big agencies can't: focused attention, genuine craft,
+              We started iluba. to offer what the big agencies can't: focused attention, genuine craft,
               and a partnership model where you're always talking to the people doing the actual work.
               No account managers, no handoffs to junior teams.
             </p>

@@ -52,7 +52,7 @@ export function Nav() {
               il
             </div>
             <span className="text-[#0D0D0D] font-bold tracking-tight" style={{ fontSize: "1.1rem" }}>
-              iluba
+              iluba.
             </span>
           </a>
 
@@ -109,7 +109,7 @@ export function Nav() {
           style={{ transform: menuOpen ? "translateX(0)" : "translateX(100%)" }}
         >
           <div className="flex items-center justify-between p-6 border-b border-gray-100">
-            <span className="font-bold text-[#0D0D0D]" style={{ fontSize: "1.1rem" }}>iluba</span>
+            <span className="font-bold text-[#0D0D0D]" style={{ fontSize: "1.1rem" }}>iluba.</span>
             <button
               onClick={() => setMenuOpen(false)}
               className="p-2 rounded-lg hover:bg-gray-100 transition-colors"

@@ -25,7 +25,7 @@ export function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 md:px-6 pt-24 md:pt-0"
       style={{
         background:
           "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(255,92,53,0.12) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(255,138,101,0.08) 0%, transparent 50%), #FAFAF8",
@@ -84,46 +84,47 @@ export function Hero() {
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         {/* Badge */}
         <div
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-8 border"
+          className="inline-flex items-center px-4 py-2 rounded-full mb-8 border "
           style={{
             background: "rgba(255,92,53,0.08)",
-            borderColor: "rgba(255,92,53,0.2)",
-            color: "#FF5C35",
             animation: "fadeInUp 0.6s ease forwards",
           }}
         >
-                        <div className="w-2 h-2 rounded-full bg-green-500" style={{ animation: "pulse 2s ease-in-out infinite" }} />
-
-          Digital Studio · Design & Development
+          <div className="flex items-center gap-2">
+            <div
+              className="w-2 h-2 rounded-full bg-green-500"
+              style={{ animation: "pulse 2s ease-in-out infinite" }}
+            />
+            <span className="text-[#6B7280] text-sm font-medium">Available for projects</span>
+          </div>
         </div>
 
         {/* Headline */}
-          <h1
-            className="text-[#0D0D0D] tracking-tight mb-6"
+        <h1
+          className="text-[#0D0D0D] tracking-tight mb-6"
+          style={{
+            fontSize: "clamp(2.6rem, 6vw, 5rem)",
+            fontWeight: 800,
+            lineHeight: 1.08,
+            letterSpacing: "-0.03em",
+            animation: "fadeInUp 0.7s ease 0.1s forwards",
+            opacity: 0,
+          }}
+        >
+          Designing digital products
+          <br /> that {" "}
+          <span
             style={{
-              fontSize: "clamp(2.6rem, 6vw, 5rem)",
-              fontWeight: 800,
-              lineHeight: 1.08,
-              letterSpacing: "-0.03em",
-              animation: "fadeInUp 0.7s ease 0.1s forwards",
-              opacity: 0,
+              background: "linear-gradient(135deg, #FF5C35 0%, #FF8A65 50%, #FF5C35 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
             }}
           >
-            <span style={{ whiteSpace: "nowrap" }}>
-            Designing digital products <br /> that
-            </span>{" "}
-            <span
-              style={{
-                background:
-                  "linear-gradient(135deg, #FF5C35 0%, #FF8A65 50%, #FF5C35 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              stand out.
-            </span>
-          </h1>
+             stand out.
+          </span>
+          
+        </h1>
 
         {/* Tagline */}
         <p
@@ -136,7 +137,7 @@ export function Hero() {
           }}
         >
           We help ambitious startups and modern businesses transform their
-          digital presence — delivering conversion-focused design, high-performance
+          digital presence - delivering conversion-focused design, high-performance
           development, and measurable growth results.
         </p>
 
@@ -169,7 +170,7 @@ export function Hero() {
 
         {/* Social proof bar */}
         <div
-          className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10"
+          className="mt-12 md:mt-16 grid grid-cols-2 md:flex md:flex-row items-center justify-center gap-6 md:gap-10"
           style={{ animation: "fadeInUp 0.7s ease 0.45s forwards", opacity: 0 }}
         >
           {[
@@ -181,11 +182,11 @@ export function Hero() {
             <div key={stat.value} className="text-center">
               <div
                 className="font-bold text-[#0D0D0D]"
-                style={{ fontSize: "1.5rem", letterSpacing: "-0.02em" }}
+                style={{ fontSize: "clamp(1.2rem, 4vw, 1.5rem)", letterSpacing: "-0.02em" }}
               >
                 {stat.value}
               </div>
-              <div className="text-[#888] text-sm mt-0.5">{stat.label}</div>
+              <div className="text-[#888] text-xs md:text-sm mt-0.5">{stat.label}</div>
             </div>
           ))}
         </div>
