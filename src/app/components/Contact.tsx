@@ -4,10 +4,9 @@ import { Calendar, Clock, Mail, MessageCircle, ArrowRight } from "lucide-react";
 
 function CalendlyEmbed() {
   useEffect(() => {
-    // Initialize Calendly widget if script already loaded
     if (typeof window !== "undefined" && (window as any).Calendly) {
       (window as any).Calendly.initInlineWidget({
-        url: "https://calendly.com/iluba-studio/discovery-call?hide_gdpr_banner=1&primary_color=FF5C35",
+        url: "https://calendly.com/j-ljubic96/30min?hide_gdpr_banner=1&primary_color=FF5C35&hide_event_type_details=1&hide_landing_page_details=1",
         parentElement: document.querySelector(".calendly-inline-widget"),
       });
     }
@@ -16,8 +15,8 @@ function CalendlyEmbed() {
   return (
     <div
       className="calendly-inline-widget"
-      data-url="https://calendly.com/iluba-studio/discovery-call?hide_gdpr_banner=1&primary_color=FF5C35&hide_landing_page_details=1"
-      style={{ minWidth: "320px", height: "700px" }}
+      data-url="https://calendly.com/j-ljubic96/30min?hide_gdpr_banner=1&primary_color=FF5C35&hide_event_type_details=1&hide_landing_page_details=1"
+      style={{ minWidth: "320px", height: "530px" }}
     />
   );
 }
@@ -63,19 +62,19 @@ export function Contact() {
           }}
         >
           {/* Left: Info */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-4">
             {[
               {
                 icon: Calendar,
                 title: "Schedule a call",
                 desc: "Pick a time that works for you via Calendly. We typically respond within 24 hours.",
-                color: "#FF5C35",
+                color: "#ff5d35",
                 bg: "rgba(255,92,53,0.08)",
               },
               {
                 icon: Clock,
                 title: "Availability",
-                desc: "Monday – Friday\n10:00 – 18:00 CET",
+                desc: "Monday – Friday\n09:00 – 17:00 CET",
                 color: "#0EA5E9",
                 bg: "rgba(14,165,233,0.08)",
               },
@@ -112,17 +111,15 @@ export function Contact() {
             })}
           </div>
 
-          {/* Right: Calendly Embed */}
-          <div className="lg:col-span-3 rounded-2xl overflow-hidden border border-[#EBEBEB] bg-white shadow-sm">
-            {/* Calendly inline embed */}
+          {/* Right: Calendly Embed — bez border-a da nema dupli okvir */}
+          <div className="lg:col-span-3 rounded-2xl overflow-hidden bg-white shadow-sm">
             <CalendlyEmbed />
 
-            {/* Fallback CTA if Calendly doesn't load */}
             <noscript>
               <div className="p-10 text-center">
                 <p className="text-[#666] mb-6">Book directly on Calendly:</p>
                 <a
-                  href="https://calendly.com/iluba-studio/discovery-call"
+                  href="https://calendly.com/j-ljubic96/30min"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold"

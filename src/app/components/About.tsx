@@ -12,7 +12,7 @@ const values = [
   {
     icon: Globe2,
     title: "Global perspective",
-    desc: "We've worked with clients across 12+ countries and understand how to design for diverse audiences.",
+    desc: "We've worked with clients across 5+ countries and understand how to design for diverse audiences.",
     color: "#0EA5E9",
     bg: "rgba(14,165,233,0.08)",
   },

@@ -4,17 +4,17 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "iluba. completely transformed how we present our product online. Our conversion rate jumped 35% within the first month after launch. They're the best investment we've made this year.",
-    name: "Marko Petrić",
+      "We'd been through two agencies before iluba. Both times we got something that looked fine but didn't convert. This time was completely different — they actually challenged our assumptions.",
+    name: "James Whitfield",
     role: "CEO",
     company: "Velo Finance",
     result: "+35% conversion rate",
-    avatar: "MP",
+    avatar: "JW",
     color: "#5B5BD6",
   },
   {
     quote:
-      "Working with the iluba. team was a breath of fresh air. They pushed back when our instincts were wrong, brought incredible attention to detail, and delivered on time. Rare.",
+      "Honestly, I was skeptical. But they came into our first call having already researched our competitors. The redesign took six weeks and organic traffic has tripled since.",
     name: "Sara Jensen",
     role: "Head of Product",
     company: "Trove Platform",
@@ -24,17 +24,17 @@ const testimonials = [
   },
   {
     quote:
-      "They took our vague idea and turned it into a beautiful, functional product. The process was smooth, communication was great, and the end result exceeded every expectation.",
-    name: "Luka Novak",
+      "What stood out was how little hand-holding was needed. I gave them a rough brief, they came back with questions I hadn't thought to ask, and the final product was better for it.",
+    name: "Marko Horvat",
     role: "Founder",
     company: "Pulse App",
-    result: "50K downloads · Q1",
-    avatar: "LN",
+    result: "+62% trial activations",
+    avatar: "MH",
     color: "#F59E0B",
   },
   {
     quote:
-      "Our new brand identity is exactly what we needed to compete with the big players. iluba. understood our market immediately and delivered a brand we're genuinely proud of.",
+      "We were going into a new market and needed to look like we belonged there. iluba. built us a brand that we'd have been embarrassed not to have. It opened doors.",
     name: "Amina Boussaid",
     role: "Co-founder & CMO",
     company: "Nomi Brand",
@@ -44,7 +44,7 @@ const testimonials = [
   },
   {
     quote:
-      "From the first call I knew this team was different. They asked the right questions, understood our users better than we did, and delivered a redesign that our customers love.",
+      "The scope crept a bit on our end, not theirs. They handled it without drama, kept the timeline intact, and didn't nickel and dime us. That's rare in this industry.",
     name: "Tom Erikson",
     role: "CPO",
     company: "Buildwise SaaS",
@@ -54,7 +54,7 @@ const testimonials = [
   },
   {
     quote:
-      "The SEO work iluba. did has paid for itself many times over. Organic traffic is up, leads are qualified, and we're ranking for terms we never thought possible 6 months ago.",
+      "Six months ago we weren't ranking for anything meaningful. Now we're on the first page for a dozen terms that actually bring in leads. The SEO work alone paid back the project cost.",
     name: "Priya Sharma",
     role: "Growth Lead",
     company: "Renova Group",

@@ -253,7 +253,7 @@ export function Work() {
             onClick={(e) => e.stopPropagation()}
             style={{ animation: "modalIn 0.3s ease" }}
           >
-            <div className="relative h-56 overflow-hidden rounded-t-3xl">
+            <div className="relative h-76 overflow-hidden rounded-t-3xl">
               <img src={selected.image} alt={selected.title} className="w-full h-full object-cover" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.6) 100%)" }} />
               <button
@@ -281,11 +281,7 @@ export function Work() {
               <h2 className="text-[#0D0D0D] mb-1" style={{ fontSize: "1.8rem", fontWeight: 800, letterSpacing: "-0.025em" }}>
                 {selected.title}
               </h2>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6"
-                style={{ background: selected.bg, color: selected.color }}>
-                <span className="w-1.5 h-1.5 rounded-full" style={{ background: selected.color }} />
-                {selected.result}
-              </div>
+
               <p className="text-[#555] leading-relaxed mb-6" style={{ lineHeight: 1.8 }}>{selected.longDesc}</p>
               <div>
                 <h4 className="text-[#0D0D0D] font-semibold mb-3 text-sm tracking-wide uppercase" style={{ letterSpacing: "0.05em" }}>Deliverables</h4>
@@ -296,11 +292,15 @@ export function Work() {
                 </div>
               </div>
               <button
-                onClick={() => setSelected(null)}
+                onClick={() => {
+                  setSelected(null);
+                  const el = document.querySelector("#contact");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="mt-8 w-full py-3.5 rounded-xl text-white font-semibold flex items-center justify-center gap-2 transition-all duration-200 hover:opacity-90"
                 style={{ background: "linear-gradient(135deg, #FF5C35 0%, #FF8A65 100%)" }}
               >
-                Start a similar project <ExternalLink size={15} />
+                Start a similar project 
               </button>
             </div>
           </div>
