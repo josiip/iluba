@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import favicon from "/favicon_io-2/android-chrome-512x512.png";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -45,12 +46,11 @@ export function Nav() {
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
             className="flex items-center gap-2 group"
           >
-            <div
-              className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm font-black transition-transform duration-200 group-hover:scale-105"
-              style={{ background: "linear-gradient(135deg, #FF5C35 0%, #FF8A65 100%)" }}
-            >
-              il
-            </div>
+<img
+  src={favicon}
+  alt="logo"
+  className="w-8 h-8 rounded-lg object-contain transition-transform duration-200 group-hover:scale-105"
+/>
             <span className="text-[#0D0D0D] font-bold tracking-tight" style={{ fontSize: "1.1rem" }}>
               iluba.
             </span>
