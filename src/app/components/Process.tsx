@@ -79,7 +79,7 @@ export function Process() {
         <div className="hidden md:grid grid-cols-4 gap-6 relative">
           {/* Connector line */}
           <div
-            className="absolute top-12 left-[12.5%] right-[12.5%] h-px"
+            className="absolute top-12 left-[2%] right-[22%] h-px"
             style={{
               background: "linear-gradient(to right, #FF5C35, #8B5CF6, #0EA5E9, #22C55E)",
               opacity: 0.3,
