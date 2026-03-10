@@ -6,7 +6,7 @@ const plans = [
   {
     icon: Zap,
     name: "Starter",
-    price: "$1100",
+    price: "$1400",
     period: "one-time",
     tagline: "One-Pager for early-stage startups and solo founders.",
     color: "#FF5C35",
@@ -26,7 +26,7 @@ const plans = [
   {
     icon: Sparkles,
     name: "Growth",
-    price: "$1700",
+    price: "$2700",
     period: "one-time",
     tagline: "For scaling businesses ready to invest in quality.",
     color: "#0D0D0D",
