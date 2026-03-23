@@ -2,70 +2,99 @@ import { useState } from "react";
 import { useReveal } from "../hooks/useReveal";
 import { ArrowUpRight, X, ExternalLink } from "lucide-react";
 
+import veloImg from "../../images/favicon_io-2/velo.jpg";
+import orbitImg from "../../images/favicon_io-2/orbit.jpg";
+import maraImg from "../../images/favicon_io-2/mara.jpg";
+import apartmaniImg from "../../images/favicon_io-2/apartmani.jpg";
+
 const projects = [
   {
     id: 1,
-    title: "Velo Finance",
-    category: "Product Design · Web Development",
+    title: "Velo",
+    category: "Web & Mobile Design",
     tags: ["Fintech", "SaaS", "Dashboard"],
     description:
-      "Complete product redesign for a B2B fintech platform serving 10,000+ SMEs. We rebuilt their onboarding flow, analytics dashboard, and design system from scratch.",
-    result: "+62% user activation rate",
-    image: "https://images.unsplash.com/photo-1641567535859-c58187ac4954?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBhcHAlMjBkYXNoYm9hcmQlMjBVSSUyMGRlc2lnbnxlbnwxfHx8fDE3NzI1NDM1NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "Modern B2B SaaS fintech dashboard designed for financial management with a clean dark mode interface and real-time data visualization.",
+    result: "Modern SaaS dashboard experience",
+    image: veloImg,
     color: "#5B5BD6",
     bg: "rgba(91,91,214,0.06)",
-    year: "2024",
+    year: "2025",
     longDesc:
-      "Velo Finance approached us with a clunky legacy interface that was frustrating their users and hurting activation. Over 12 weeks, we audited the existing product, ran user interviews, redesigned the entire information architecture, and built a new React dashboard with real-time data visualizations. The result: a 62% increase in user activation and a 40% reduction in support tickets.",
-    deliverables: ["UX Research & Audit", "Design System", "Dashboard UI", "React Development", "QA & Launch"],
+      "Velo is a modern fintech dashboard concept built for efficient financial management. The platform features structured sidebar navigation with sections for Dashboard, Analytics, Transactions, Accounts and Payments. It includes KPI metrics, revenue charts, account balances, expense breakdown, cash flow visualization and recent transactions. The design focuses on a professional dark interface, clear data hierarchy, interactive charts and responsive layouts optimized for real-time financial monitoring.",
+    deliverables: [
+      "Dashboard UI Design",
+      "UX Structure",
+      "Data Visualization",
+      "Responsive Layout",
+      "Design System"
+    ],
   },
   {
     id: 2,
-    title: "Nomi Brand",
-    category: "Brand Identity · Landing Page",
-    tags: ["DTC", "Branding", "E-commerce"],
+    title: "Orbit HR",
+    category: "Web & Mobile Design",
+    tags: ["SaaS", "HR", "Dashboard"],
     description:
-      "Full brand identity and high-converting landing page for a D2C food startup launching in 4 European markets simultaneously.",
-    result: "+35% conversion vs. industry avg.",
-    image: "https://images.unsplash.com/photo-1590102426275-8d1c367070d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdGFydHVwJTIwYnJhbmQlMjBpZGVudGl0eSUyMGRlc2lnbiUyMG1vY2t1cHxlbnwxfHx8fDE3NzI2MzIxMDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    color: "#FF5C35",
-    bg: "rgba(255,92,53,0.06)",
-    year: "2024",
+      "Modern enterprise HR platform designed for small and mid-sized teams with a clean SaaS interface and structured purple visual system.",
+    result: "Complete HR dashboard system",
+    image: orbitImg,
+    color: "#8B5CF6",
+    bg: "rgba(139,92,246,0.06)",
+    year: "2025",
     longDesc:
-      "Nomi needed a visual identity and digital presence that could compete with established FMCG brands. We developed a bold, playful brand system with a custom wordmark, color palette, and photography art direction. The landing page we built achieved 35% above the industry average conversion rate in its first 30 days live.",
-    deliverables: ["Logo & Wordmark", "Brand Guidelines", "Packaging Direction", "Landing Page", "Social Kit"],
+      "Orbit HR is a full-featured HR platform dashboard designed for team management. It includes onboarding flows, team dashboard, employee directory, leave management, performance reviews, analytics, document management and organizational structure. The UI follows a clean purple SaaS aesthetic with clear hierarchy, sticky headers, notification states and responsive layouts. Built as a modern product dashboard optimized for usability and everyday team operations.",
+    deliverables: [
+      "UX/UI Design",
+      "Dashboard System",
+      "Responsive Design",
+      "Design System",
+      "User Flows"
+    ],
   },
   {
     id: 3,
-    title: "Trove Platform",
-    category: "Web Development · SEO",
-    tags: ["Marketplace", "SEO", "Growth"],
+    title: "Mara Studio",
+    category: "Web & Mobile Design",
+    tags: ["E-commerce", "Fashion", "Brand"],
     description:
-      "Performance-first marketplace platform rebuild and SEO strategy that tripled organic traffic in under six months.",
-    result: "3× organic traffic growth",
-    image: "https://images.unsplash.com/photo-1579642984094-5be053d579b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjBwcm9kdWN0JTIwbGFuZGluZyUyMHBhZ2UlMjBkZXNpZ258ZW58MXx8fHwxNzcyNjMyMTAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    color: "#22C55E",
-    bg: "rgba(34,197,94,0.06)",
+      "Luxury boutique fashion e-commerce website with a minimalist, high-end aesthetic inspired by modern Shopify stores.",
+    result: "High-end fashion web experience",
+    image: maraImg,
+    color: "#D6A77A",
+    bg: "rgba(214,167,122,0.06)",
     year: "2025",
     longDesc:
-      "Trove's marketplace had significant technical SEO debt — slow page loads, crawl issues, and poor content structure. We migrated them to a Next.js architecture, implemented structured data, optimised Core Web Vitals, and executed a 6-month content strategy. Within 5 months, organic sessions had tripled and paid acquisition costs dropped by 28%.",
-    deliverables: ["Technical SEO Audit", "Next.js Migration", "Core Web Vitals", "Content Strategy", "Link Building"],
+      "Mara Studio is a luxury fashion e-commerce concept built with a minimalist editorial approach. It features serif typography, soft cream tones and clean layouts. The website includes homepage with hero and featured products, shop with filters, product pages with detailed options, lookbook, brand storytelling and newsletter integration. Fully responsive design optimized for desktop, tablet and mobile with a focus on elegant product presentation.",
+    deliverables: [
+      "E-commerce Design",
+      "UI System",
+      "Responsive Layout",
+      "Product Pages",
+      "Brand Experience"
+    ],
   },
   {
     id: 4,
-    title: "Pulse App",
-    category: "UI/UX Design · Product Design",
-    tags: ["Mobile", "Health", "Product"],
+    title: "Apartmani Sunce",
+    category: "Web & Mobile Design",
+    tags: ["Hospitality", "Booking", "Landing Page"],
     description:
-      "End-to-end UX design for a health-tracking mobile app, from zero to 50,000 downloads in the first quarter.",
-    result: "50K downloads · Q1 launch",
-    image: "https://images.unsplash.com/photo-1767449441925-737379bc2c4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBVWCUyMGRlc2lnbiUyMHNjcmVlbnxlbnwxfHx8fDE3NzI2MzIxMDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    color: "#F59E0B",
-    bg: "rgba(245,158,11,0.06)",
+      "Single-page promotional website for a family-run apartment rental with a warm Mediterranean aesthetic.",
+    result: "Conversion-focused rental website",
+    image: apartmaniImg,
+    color: "#C2410C",
+    bg: "rgba(194,65,12,0.06)",
     year: "2025",
     longDesc:
-      "Pulse hired us as their lead design partner to take the app from concept to launch-ready. We ran discovery workshops, mapped all user flows, designed and prototyped the complete app in Figma, and worked closely with their engineering team during handoff. The app hit 50,000 downloads in its first 3 months and maintained a 4.7★ App Store rating.",
-    deliverables: ["Discovery & Research", "User Flows", "Wireframes", "UI Design", "Prototype & Handoff"],
+      "Apartmani Sunce is a single-page website designed for a family-run rental on the Dalmatian coast. The design uses warm Mediterranean tones with a clean layout and storytelling approach. It includes a hero section, personal story, gallery, amenities overview, booking form and location map. The UX focuses on simplicity, trust and conversion, with smooth scroll animations and full responsiveness.",
+    deliverables: [
+      "Landing Page Design",
+      "Responsive Design",
+      "UX Writing",
+      "Booking Flow",
+      "Visual Identity"
+    ],
   },
 ];
 
@@ -254,7 +283,7 @@ export function Work() {
             style={{ animation: "modalIn 0.3s ease" }}
           >
             <div className="relative h-76 overflow-hidden rounded-t-3xl">
-              <img src={selected.image} alt={selected.title} className="w-full h-full object-cover" />
+              <img src={selected.image} alt={selected.title} className="w-full h-full object-cover"    style={{ objectPosition: "center 16%" }}/>
               <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.6) 100%)" }} />
               <button
                 onClick={() => setSelected(null)}
