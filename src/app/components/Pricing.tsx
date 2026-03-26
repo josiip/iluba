@@ -1,75 +1,38 @@
 import { useState } from "react";
 import { useReveal } from "../hooks/useReveal";
 import { Check, Zap, Building2, Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-const plans = [
-  {
-    icon: Zap,
-    name: "Starter",
-    price: "$1400",
-    period: "one-time",
-    tagline: "One-Pager for early-stage startups and solo founders.",
-    color: "#FF5C35",
-    bg: "rgba(255,92,53,0.06)",
-    popular: false,
-    features: [
-      "Landing page design & development",
-      "Mobile-responsive layout",
-      "Basic SEO setup",
-      "Google Analytics integration",
-      "2 rounds of revisions",
-      "5-day delivery",
-      "14-day post-launch support",
-    ],
-    cta: "Get started",
-  },
-  {
-    icon: Sparkles,
-    name: "Growth",
-    price: "$2700",
-    period: "one-time",
-    tagline: "For scaling businesses ready to invest in quality.",
-    color: "#0D0D0D",
-    bg: "#0D0D0D",
-    popular: true,
-    features: [
-      "Everything in Starter",
-      "Full website (up to 8 pages)",
-      "Custom UI/UX design",
-      "Brand identity system",
-      "Technical SEO & performance audit",
-      "CMS integration",
-      "3 months of support",
-      "Unlimited revisions",
-    ],
-    cta: "Start a project",
-  },
-  {
-    icon: Building2,
-    name: "Scale",
-    price: "Custom",
-    period: "monthly retainer",
-    tagline: "For ambitious teams needing an ongoing studio partner.",
-    color: "#8B5CF6",
-    bg: "rgba(139,92,246,0.06)",
-    popular: false,
-    features: [
-      "Everything in Growth",
-      "Product design & development",
-      "Ongoing digital growth",
-      "SEO & content strategy",
-      "Social media management",
-      "Monthly reporting & analytics",
-      "Dedicated team, Slack access",
-      "Priority turnaround",
-    ],
-    cta: "Let's talk",
-  },
-];
+const planIcons = [Zap, Sparkles, Building2];
+const planColors = ["#FF5C35", "#0D0D0D", "#8B5CF6"];
+const planBgs = ["rgba(255,92,53,0.06)", "#0D0D0D", "rgba(139,92,246,0.06)"];
+const planPopular = [false, true, false];
+// COMMENTED OUT: Pricing moved to "Contact for quote" model
+// const planPrices = ["$1400", "$2700", "Custom"];
+const planPrices = ["Contact for quote", "Contact for quote", "Contact for quote"];
+
+type PlanTranslation = {
+  name: string;
+  period: string;
+  tagline: string;
+  features: string[];
+  cta: string;
+};
 
 export function Pricing() {
   const { ref, visible } = useReveal();
-  const [selectedPlan, setSelectedPlan] = useState<number>(1); // Default to Growth (index 1)
+  const { t } = useTranslation();
+  const [selectedPlan, setSelectedPlan] = useState<number>(1);
+
+  const plansData = t("pricing.plans", { returnObjects: true }) as PlanTranslation[];
+  const plans = plansData.map((plan, i) => ({
+    ...plan,
+    price: planPrices[i],
+    icon: planIcons[i],
+    color: planColors[i],
+    bg: planBgs[i],
+    popular: planPopular[i],
+  }));
 
   const scrollTo = (id: string) => {
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
@@ -86,7 +49,7 @@ export function Pricing() {
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
             style={{ background: "rgba(255,92,53,0.08)", color: "#FF5C35" }}
           >
-            Pricing
+            {t("pricing.badge")}
           </div>
 
           <h2
@@ -98,14 +61,14 @@ export function Pricing() {
               letterSpacing: "-0.025em",
             }}
           >
-            Simple, transparent pricing.
+            {t("pricing.heading")}
           </h2>
 
           <p
             className="text-[#666] mt-4 max-w-lg"
             style={{ fontSize: "1.05rem", lineHeight: 1.7 }}
           >
-            No hidden fees, no surprises. Invest confidently in your digital growth.
+            {t("pricing.subheading")}
           </p>
         </div>
 
@@ -128,7 +91,7 @@ export function Pricing() {
                 {plan.popular && selectedPlan === i && (
                   <div className="absolute -top-2 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full text-[9px] font-bold text-white whitespace-nowrap"
                     style={{ background: "linear-gradient(135deg, #FF5C35 0%, #FF8A65 100%)" }}>
-                    Popular
+                    {t("pricing.popular")}
                   </div>
                 )}
               </button>
@@ -170,7 +133,8 @@ export function Pricing() {
                 >
                   {plan.price}
                 </div>
-                <div className={`text-xs mb-4 ${isDark ? "text-white/40" : "text-[#AAA]"}`}>{plan.period}</div>
+                {/* COMMENTED OUT: Period label hidden in "Contact for quote" model */}
+                {/* <div className={`text-xs mb-4 ${isDark ? "text-white/40" : "text-[#AAA]"}`}>{plan.period}</div> */}
                 <p className={`text-sm mb-6 leading-relaxed ${isDark ? "text-white/60" : "text-[#666]"}`}>
                   {plan.tagline}
                 </p>
@@ -195,13 +159,11 @@ export function Pricing() {
                   style={{
                     background: isDark
                       ? "linear-gradient(135deg, #FF5C35 0%, #FF8A65 100%)"
-                      : plan.popular
-                      ? "#0D0D0D"
                       : "#0D0D0D",
                     color: "white",
                   }}
                 >
-                  {plan.cta}
+                  {t("pricing.ctaButton")}
                 </button>
               </div>
             );
@@ -231,7 +193,7 @@ export function Pricing() {
                     className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full text-xs font-bold text-white"
                     style={{ background: "linear-gradient(135deg, #FF5C35 0%, #FF8A65 100%)" }}
                   >
-                    Most Popular
+                    {t("pricing.mostPopular")}
                   </div>
                 )}
 
@@ -251,7 +213,8 @@ export function Pricing() {
                 >
                   {plan.price}
                 </div>
-                <div className={`text-xs mb-4 ${isDark ? "text-white/40" : "text-[#AAA]"}`}>{plan.period}</div>
+                {/* COMMENTED OUT: Period label hidden in "Contact for quote" model */}
+                {/* <div className={`text-xs mb-4 ${isDark ? "text-white/40" : "text-[#AAA]"}`}>{plan.period}</div> */}
                 <p className={`text-sm mb-6 leading-relaxed ${isDark ? "text-white/60" : "text-[#666]"}`}>
                   {plan.tagline}
                 </p>
@@ -276,39 +239,36 @@ export function Pricing() {
                   style={{
                     background: isDark
                       ? "linear-gradient(135deg, #FF5C35 0%, #FF8A65 100%)"
-                      : plan.popular
-                      ? "#0D0D0D"
                       : "#0D0D0D",
                     color: "white",
                   }}
                 >
-                  {plan.cta}
+                  {t("pricing.ctaButton")}
                 </button>
               </div>
             );
           })}
         </div>
 
-        {/* Standalone services CTA */}
-        <div
+        {/* COMMENTED OUT: Standalone services CTA removed */}
+        {/* <div
           className="mt-16 text-center rounded-2xl border border-[#FFE8E0] p-12 relative overflow-hidden"
-          style={{ 
-            opacity: visible ? 1 : 0, 
+          style={{
+            opacity: visible ? 1 : 0,
             transition: "opacity 0.6s ease 0.5s",
             background: "linear-gradient(135deg, #FFF9F7 0%, #FFFBF9 50%, #FFF5F0 100%)",
             boxShadow: "0 4px 24px rgba(255, 92, 53, 0.08)"
           }}
         >
-          {/* Decorative elements */}
-          <div 
+          <div
             className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-30 blur-3xl"
             style={{ background: "#FF5C35" }}
           />
-          <div 
+          <div
             className="absolute bottom-0 left-0 w-24 h-24 rounded-full opacity-20 blur-2xl"
             style={{ background: "#FF5C35" }}
           />
-          
+
           <div className="relative z-10">
             <div className="inline-flex items-center justify-center w-14 h-14 rounded-full mb-5" style={{ background: "rgba(255, 92, 53, 0.1)" }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -318,8 +278,8 @@ export function Pricing() {
               </svg>
             </div>
             <p className="text-[#0D0D0D] mb-7" style={{ fontSize: "1.15rem", lineHeight: 1.7 }}>
-              Looking for design, development or marketing only?<br />
-              <span style={{ fontWeight: 600 }}>We also offer standalone services.</span>
+              {t("pricing.standaloneText")}<br />
+              <span style={{ fontWeight: 600 }}>{t("pricing.standaloneHighlight")}</span>
             </p>
             <button
               onClick={() => scrollTo("#contact")}
@@ -330,13 +290,13 @@ export function Pricing() {
                 boxShadow: "0 4px 16px rgba(255, 92, 53, 0.3)"
               }}
             >
-              Get a custom quote
+              {t("pricing.getCustomQuote")}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 12L10 8L6 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

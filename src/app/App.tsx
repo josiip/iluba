@@ -4,7 +4,8 @@ import { Hero } from "./components/Hero";
 import { Services } from "./components/Services";
 import { Work } from "./components/Work";
 import { Process } from "./components/Process";
-import { Testimonials } from "./components/Testimonials";
+// COMMENTED OUT: Testimonials section removed as feedback looked too fake
+// import { Testimonials } from "./components/Testimonials";
 import { Pricing } from "./components/Pricing";
 import { About } from "./components/About";
 import { FAQ } from "./components/FAQ";
@@ -12,14 +13,14 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
 export default function App() {
-  // Load Calendly widget script
-  useEffect(() => {
-    if (document.querySelector('script[src*="calendly"]')) return;
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
+  // COMMENTED OUT: Calendly script loading removed (replaced with contact form)
+  // useEffect(() => {
+  //   if (document.querySelector('script[src*="calendly"]')) return;
+  //   const script = document.createElement("script");
+  //   script.src = "https://assets.calendly.com/assets/external/widget.js";
+  //   script.async = true;
+  //   document.body.appendChild(script);
+  // }, []);
 
   return (
     <div
@@ -38,7 +39,8 @@ export default function App() {
         <Services />
         <Work />
         <Process />
-        <Testimonials />
+        {/* COMMENTED OUT: Testimonials removed - section felt inauthentic */}
+        {/* <Testimonials /> */}
         <Pricing />
         <About />
         <FAQ />

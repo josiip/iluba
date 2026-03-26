@@ -1,32 +1,43 @@
-import { Twitter, Linkedin, Instagram, Dribbble } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const scrollTo = (id: string) => {
   const el = document.querySelector(id);
   if (el) el.scrollIntoView({ behavior: "smooth" });
 };
 
-const links = {
-  Services: [
-    { label: "UI/UX Design", href: "#services" },
-    { label: "Web Development", href: "#services" },
-    { label: "Brand Identity", href: "#services" },
-    { label: "SEO & Growth", href: "#services" },
-    { label: "Digital Marketing", href: "#services" },
-  ],
-  Company: [
-    { label: "About Us", href: "#about" },
-    { label: "Selected Work", href: "#work" },
-    { label: "Our Process", href: "#process" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "FAQ", href: "#faq" },
-  ],
-  Contact: [
-    { label: "Book a Call", href: "#contact" },
-    { label: "hello@iluba.co", href: "mailto:hello@iluba.co", external: true },
-  ],
-};
-
 export function Footer() {
+  const { t } = useTranslation();
+
+  const links = [
+    {
+      heading: t("footer.services.heading"),
+      items: [
+        { label: t("footer.services.uiux"), href: "#services" },
+        { label: t("footer.services.webDev"), href: "#services" },
+        { label: t("footer.services.brand"), href: "#services" },
+        { label: t("footer.services.seo"), href: "#services" },
+        { label: t("footer.services.marketing"), href: "#services" },
+      ],
+    },
+    {
+      heading: t("footer.company.heading"),
+      items: [
+        { label: t("footer.company.about"), href: "#about" },
+        { label: t("footer.company.work"), href: "#work" },
+        { label: t("footer.company.process"), href: "#process" },
+        { label: t("footer.company.pricing"), href: "#pricing" },
+        { label: t("footer.company.faq"), href: "#faq" },
+      ],
+    },
+    {
+      heading: t("footer.contact.heading"),
+      items: [
+        { label: t("footer.contact.bookCall"), href: "#contact" },
+        { label: "hello@iluba.co", href: "mailto:hello@iluba.co", external: true },
+      ],
+    },
+  ];
+
   return (
     <footer
       className="border-t border-[#F0F0F0]"
@@ -48,38 +59,21 @@ export function Footer() {
               </span>
             </div>
             <p className="text-[#888] text-sm leading-relaxed max-w-xs mb-6" style={{ lineHeight: 1.8 }}>
-            We help startups and modern businesses launch faster, convert better, and grow online — through strategic web design and custom digital products.
+              {t("footer.tagline")}
             </p>
-            {/* Social links */}
-            {/* <div className="flex items-center gap-3">
-              {[
-                { Icon: Twitter, href: "#" },
-                { Icon: Linkedin, href: "#" },
-                { Icon: Instagram, href: "#" },
-                { Icon: Dribbble, href: "#" },
-              ].map(({ Icon, href }, i) => (
-                <a
-                  key={i}
-                  href={href}
-                  className="w-9 h-9 rounded-full bg-[#F5F5F5] flex items-center justify-center text-[#888] hover:bg-[#FF5C35] hover:text-white transition-all duration-200"
-                >
-                  <Icon size={15} />
-                </a>
-              ))}
-            </div> */}
           </div>
 
           {/* Links */}
-          {Object.entries(links).map(([group, items]) => (
-            <div key={group}>
+          {links.map((group, idx) => (
+            <div key={idx}>
               <div
                 className="text-[#0D0D0D] font-semibold text-sm mb-4"
                 style={{ letterSpacing: "-0.01em" }}
               >
-                {group}
+                {group.heading}
               </div>
               <ul className="space-y-3">
-                {items.map((item) => (
+                {group.items.map((item) => (
                   <li key={item.label}>
                     {item.external ? (
                       <a
@@ -106,14 +100,12 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-[#F0F0F0] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[#AAA] text-sm">
-            © {new Date().getFullYear()} iluba. All rights reserved.
+            {t("footer.rights", { year: new Date().getFullYear() })}
           </p>
           <div className="flex items-center gap-6">
-            {/* <a href="#" className="text-[#AAA] text-sm hover:text-[#666] transition-colors">Privacy Policy</a>
-            <a href="#" className="text-[#AAA] text-sm hover:text-[#666] transition-colors">Terms of Service</a> */}
             <div className="flex items-center gap-1.5">
               <div className="w-2 h-2 rounded-full bg-green-500" style={{ animation: "pulse 2s ease-in-out infinite" }} />
-              <span className="text-[#AAA] text-xs">Available for projects</span>
+              <span className="text-[#AAA] text-xs">{t("footer.available")}</span>
             </div>
           </div>
         </div>

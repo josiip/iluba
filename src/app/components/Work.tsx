@@ -1,105 +1,49 @@
 import { useState } from "react";
 import { useReveal } from "../hooks/useReveal";
-import { ArrowUpRight, X, ExternalLink } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import veloImg from "../../images/favicon_io-2/velo.jpg";
 import orbitImg from "../../images/favicon_io-2/orbit.jpg";
 import maraImg from "../../images/favicon_io-2/mara.jpg";
 import apartmaniImg from "../../images/favicon_io-2/apartmani.jpg";
 
-const projects = [
-  {
-    id: 1,
-    title: "Velo",
-    category: "Web & Mobile Design",
-    tags: ["Fintech", "SaaS", "Dashboard"],
-    description:
-      "Modern B2B SaaS fintech dashboard designed for financial management with a clean dark mode interface and real-time data visualization.",
-    result: "Modern SaaS dashboard experience",
-    image: veloImg,
-    color: "#5B5BD6",
-    bg: "rgba(91,91,214,0.06)",
-    year: "2025",
-    longDesc:
-      "Velo is a modern fintech dashboard concept built for efficient financial management. The platform features structured sidebar navigation with sections for Dashboard, Analytics, Transactions, Accounts and Payments. It includes KPI metrics, revenue charts, account balances, expense breakdown, cash flow visualization and recent transactions. The design focuses on a professional dark interface, clear data hierarchy, interactive charts and responsive layouts optimized for real-time financial monitoring.",
-    deliverables: [
-      "Dashboard UI Design",
-      "UX Structure",
-      "Data Visualization",
-      "Responsive Layout",
-      "Design System"
-    ],
-  },
-  {
-    id: 2,
-    title: "Orbit HR",
-    category: "Web & Mobile Design",
-    tags: ["SaaS", "HR", "Dashboard"],
-    description:
-      "Modern enterprise HR platform designed for small and mid-sized teams with a clean SaaS interface and structured purple visual system.",
-    result: "Complete HR dashboard system",
-    image: orbitImg,
-    color: "#8B5CF6",
-    bg: "rgba(139,92,246,0.06)",
-    year: "2025",
-    longDesc:
-      "Orbit HR is a full-featured HR platform dashboard designed for team management. It includes onboarding flows, team dashboard, employee directory, leave management, performance reviews, analytics, document management and organizational structure. The UI follows a clean purple SaaS aesthetic with clear hierarchy, sticky headers, notification states and responsive layouts. Built as a modern product dashboard optimized for usability and everyday team operations.",
-    deliverables: [
-      "UX/UI Design",
-      "Dashboard System",
-      "Responsive Design",
-      "Design System",
-      "User Flows"
-    ],
-  },
-  {
-    id: 3,
-    title: "Mara Studio",
-    category: "Web & Mobile Design",
-    tags: ["E-commerce", "Fashion", "Brand"],
-    description:
-      "Luxury boutique fashion e-commerce website with a minimalist, high-end aesthetic inspired by modern Shopify stores.",
-    result: "High-end fashion web experience",
-    image: maraImg,
-    color: "#D6A77A",
-    bg: "rgba(214,167,122,0.06)",
-    year: "2025",
-    longDesc:
-      "Mara Studio is a luxury fashion e-commerce concept built with a minimalist editorial approach. It features serif typography, soft cream tones and clean layouts. The website includes homepage with hero and featured products, shop with filters, product pages with detailed options, lookbook, brand storytelling and newsletter integration. Fully responsive design optimized for desktop, tablet and mobile with a focus on elegant product presentation.",
-    deliverables: [
-      "E-commerce Design",
-      "UI System",
-      "Responsive Layout",
-      "Product Pages",
-      "Brand Experience"
-    ],
-  },
-  {
-    id: 4,
-    title: "Apartmani Sunce",
-    category: "Web & Mobile Design",
-    tags: ["Hospitality", "Booking", "Landing Page"],
-    description:
-      "Single-page promotional website for a family-run apartment rental with a warm Mediterranean aesthetic.",
-    result: "Conversion-focused rental website",
-    image: apartmaniImg,
-    color: "#C2410C",
-    bg: "rgba(194,65,12,0.06)",
-    year: "2025",
-    longDesc:
-      "Apartmani Sunce is a single-page website designed for a family-run rental on the Dalmatian coast. The design uses warm Mediterranean tones with a clean layout and storytelling approach. It includes a hero section, personal story, gallery, amenities overview, booking form and location map. The UX focuses on simplicity, trust and conversion, with smooth scroll animations and full responsiveness.",
-    deliverables: [
-      "Landing Page Design",
-      "Responsive Design",
-      "UX Writing",
-      "Booking Flow",
-      "Visual Identity"
-    ],
-  },
+const projectImages = [veloImg, orbitImg, maraImg, apartmaniImg];
+const projectTitles = ["Velo", "Orbit HR", "Mara Studio", "Apartmani Sunce"];
+const projectColors = ["#5B5BD6", "#8B5CF6", "#D6A77A", "#C2410C"];
+const projectBgs = [
+  "rgba(91,91,214,0.06)",
+  "rgba(139,92,246,0.06)",
+  "rgba(214,167,122,0.06)",
+  "rgba(194,65,12,0.06)",
 ];
+const projectYears = ["2025", "2025", "2025", "2025"];
+
+type ProjectTranslation = {
+  category: string;
+  tags: string[];
+  description: string;
+  result: string;
+  longDesc: string;
+  deliverables: string[];
+};
 
 export function Work() {
   const { ref, visible } = useReveal();
+  const { t } = useTranslation();
+
+  const projectsData = t("work.projects", { returnObjects: true }) as ProjectTranslation[];
+
+  const projects = projectsData.map((p, i) => ({
+    id: i + 1,
+    title: projectTitles[i],
+    image: projectImages[i],
+    color: projectColors[i],
+    bg: projectBgs[i],
+    year: projectYears[i],
+    ...p,
+  }));
+
   const [selected, setSelected] = useState<(typeof projects)[0] | null>(null);
 
   return (
@@ -116,16 +60,16 @@ export function Work() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
             style={{ background: "rgba(255,92,53,0.08)", color: "#FF5C35" }}>
-            Selected Work
+            {t("work.badge")}
           </div>
           <h2
             className="text-[#0D0D0D] max-w-xl"
             style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 800, lineHeight: 1.15, letterSpacing: "-0.025em" }}
           >
-            Work we're proud to ship.
+            {t("work.heading")}
           </h2>
           <p className="text-[#666] mt-4 max-w-lg" style={{ fontSize: "1.05rem", lineHeight: 1.7 }}>
-            Real projects, real results. Every case study is a story of close collaboration and measurable outcomes.
+            {t("work.subheading")}
           </p>
         </div>
 
@@ -283,7 +227,7 @@ export function Work() {
             style={{ animation: "modalIn 0.3s ease" }}
           >
             <div className="relative h-76 overflow-hidden rounded-t-3xl">
-              <img src={selected.image} alt={selected.title} className="w-full h-full object-cover"    style={{ objectPosition: "center 16%" }}/>
+              <img src={selected.image} alt={selected.title} className="w-full h-full object-cover" style={{ objectPosition: "center 16%" }}/>
               <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.6) 100%)" }} />
               <button
                 onClick={() => setSelected(null)}
@@ -313,7 +257,9 @@ export function Work() {
 
               <p className="text-[#555] leading-relaxed mb-6" style={{ lineHeight: 1.8 }}>{selected.longDesc}</p>
               <div>
-                <h4 className="text-[#0D0D0D] font-semibold mb-3 text-sm tracking-wide uppercase" style={{ letterSpacing: "0.05em" }}>Deliverables</h4>
+                <h4 className="text-[#0D0D0D] font-semibold mb-3 text-sm tracking-wide uppercase" style={{ letterSpacing: "0.05em" }}>
+                  {t("work.deliverablesLabel")}
+                </h4>
                 <div className="flex flex-wrap gap-2">
                   {selected.deliverables.map((d) => (
                     <span key={d} className="px-3 py-1.5 bg-[#F5F5F5] text-[#444] text-sm rounded-full font-medium">{d}</span>
@@ -329,7 +275,7 @@ export function Work() {
                 className="mt-8 w-full py-3.5 rounded-xl text-white font-semibold flex items-center justify-center gap-2 transition-all duration-200 hover:opacity-90"
                 style={{ background: "linear-gradient(135deg, #FF5C35 0%, #FF8A65 100%)" }}
               >
-                Start a similar project 
+                {t("work.startSimilar")}
               </button>
             </div>
           </div>

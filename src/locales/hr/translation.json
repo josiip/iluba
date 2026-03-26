@@ -1,0 +1,338 @@
+{
+    "nav": {
+      "services": "Usluge",
+      "work": "Radovi",
+      "process": "Proces",
+      "pricing": "Cijene",
+      "about": "O nama",
+      "faq": "FAQ",
+      "startProject": "Pokreni projekt"
+    },
+    "hero": {
+      "available": "Dostupni za nove projekte",
+      "headline1": "Dizajniramo digitalne proizvode koji",
+      "headline2": "ostavljaju dojam.",
+      "that":"",
+      "tagline": "Pomažemo ambicioznim startupima i modernim tvrtkama unaprijediti digitalnu prisutnost — kroz dizajn usmjeren na konverzije, vrhunski development i mjerljive rezultate rasta.",
+      "ctaPrimary": "Pokreni projekt",
+      "ctaSecondary": "Pogledaj naše radove",
+      "stats": [
+        { "value": "30+", "label": "Isporučenih projekata" },
+        { "value": "100%", "label": "Zadovoljstvo klijenata" },
+        { "value": "4+", "label": "Godine poslovanja" }
+      ],
+      "scroll": "Scrollaj"
+    },
+    "services": {
+      "badge": "Usluge",
+      "heading": "Sve što vašem poslovanju treba za rast online.",
+      "subheading": "Nudimo kompletan spektar digitalnih usluga — od izgradnje brenda do lansiranja i skaliranja vašeg proizvoda.",
+      "items": [
+        {
+          "category": "Dizajn",
+          "description": "Oblikujemo korisnička iskustva koja djeluju prirodno — čista, intuitivna i stvorena za konverzije.",
+          "subitems": [
+            { "title": "UI/UX Dizajn", "desc": "Cjelovit dizajn sučelja — od wireframeova do dotjeranih ekrana spremnih za produkciju." },
+            { "title": "Product Dizajn", "desc": "End-to-end pristup razvoju proizvoda: istraživanje, prototipiranje i iterativni dizajn sustava." },
+            { "title": "Vizualni identitet", "desc": "Sustavi vizualnog identiteta koji vaš brend pozicioniraju kao lidera u kategoriji." }
+          ]
+        },
+        {
+          "category": "Development",
+          "description": "Brz, stabilan i skalabilan kod — od pixel-perfect landing stranica do kompleksnih web aplikacija po mjeri.",
+          "subitems": [
+            { "title": "Web Development", "desc": "Moderne React i Next.js aplikacije izrađene za vrhunske performanse i jednostavno održavanje." },
+            { "title": "Landing stranice", "desc": "Landing stranice s visokom stopom konverzije koje promet pretvaraju u kvalitetne leadove." },
+            { "title": "Custom Web Solutions", "desc": "Prilagođene platforme, dashboardi i alati izrađeni točno prema vašim potrebama." }
+          ]
+        },
+        {
+          "category": "Digitalni rast",
+          "description": "Održive strategije rasta koje povećavaju vidljivost, promet i prihode.",
+          "subitems": [
+            { "title": "SEO optimizacija", "desc": "Tehnički i sadržajni SEO za bolje pozicije na tražilicama i kvalitetniji organski promet." },
+            { "title": "Digitalni marketing", "desc": "Plaćene kampanje i content strategije temeljene na podacima koje donose konkretne rezultate." },
+            { "title": "Upravljanje društvenim mrežama", "desc": "Dosljedan sadržaj i vođenje zajednice kroz sve ključne digitalne kanale." }
+          ]
+        }
+      ]
+    },
+    "work": {
+      "badge": "Odabrani radovi",
+      "heading": "Projekti koje s ponosom isporučujemo.",
+      "subheading": "Stvarni projekti, stvarni rezultati. Svaki case study priča je o bliskoj suradnji i mjerljivom učinku.",
+      "deliverablesLabel": "Isporučeno",
+      "startSimilar": "Pokreni sličan projekt",
+      "projects": [
+        {
+          "category": "Web & Mobile Design",
+          "tags": ["Fintech", "SaaS", "Dashboard"],
+          "description": "Moderan B2B SaaS fintech dashboard za financijsko upravljanje s elegantnim dark mode sučeljem i vizualizacijom podataka u stvarnom vremenu.",
+          "result": "Moderno SaaS dashboard iskustvo",
+          "longDesc": "Velo je moderan fintech dashboard koncept osmišljen za učinkovito financijsko upravljanje. Platforma sadrži strukturiranu bočnu navigaciju sa sekcijama za Dashboard, Analytics, Transactions, Accounts i Payments. Uključuje KPI metrike, grafove prihoda, stanja računa, pregled troškova, vizualizaciju cash flowa i nedavne transakcije. Dizajn je fokusiran na profesionalno dark sučelje, jasnu hijerarhiju podataka, interaktivne grafikone i responsive rasporede optimizirane za praćenje financija u stvarnom vremenu.",
+          "deliverables": ["Dashboard UI Design", "UX Structure", "Data Visualization", "Responsive Layout", "Design System"]
+        },
+        {
+          "category": "Web & Mobile Design",
+          "tags": ["SaaS", "HR", "Dashboard"],
+          "description": "Moderna enterprise HR platforma za male i srednje timove s čistim SaaS sučeljem i jasno definiranim ljubičastim vizualnim sustavom.",
+          "result": "Kompletan HR dashboard sustav",
+          "longDesc": "Orbit HR je cjelovita HR platforma i dashboard sustav osmišljen za upravljanje timovima. Uključuje onboarding flowove, timski dashboard, direktorij zaposlenika, upravljanje godišnjim odmorima, performance reviewe, analitiku, upravljanje dokumentima i organizacijsku strukturu. UI prati čistu ljubičastu SaaS estetiku s jasnom hijerarhijom, sticky headerima, stanjima obavijesti i responsive layoutima. Izrađen je kao moderan product dashboard optimiziran za upotrebljivost i svakodnevni rad timova.",
+          "deliverables": ["UX/UI Design", "Dashboard System", "Responsive Design", "Design System", "User Flows"]
+        },
+        {
+          "category": "Web & Mobile Design",
+          "tags": ["E-commerce", "Fashion", "Brand"],
+          "description": "Luksuzna boutique fashion e-commerce web stranica s minimalističkom, premium estetikom inspiriranom modernim Shopify trgovinama.",
+          "result": "Premium fashion web iskustvo",
+          "longDesc": "Mara Studio je luksuzni fashion e-commerce koncept izrađen s minimalističkim editorial pristupom. Sadrži serifnu tipografiju, nježne krem tonove i čiste layoute. Web stranica uključuje početnu stranicu s hero sekcijom i istaknutim proizvodima, shop s filterima, stranice proizvoda s detaljnim opcijama, lookbook, brand storytelling i integraciju newslettera. U potpunosti je responsive i optimizirana za desktop, tablet i mobilne uređaje, s naglaskom na elegantnu prezentaciju proizvoda.",
+          "deliverables": ["E-commerce Design", "UI System", "Responsive Layout", "Product Pages", "Brand Experience"]
+        },
+        {
+          "category": "Web & Mobile Design",
+          "tags": ["Hospitality", "Booking", "Landing Page"],
+          "description": "Jednostranična promotivna web stranica za obiteljski apartmanski smještaj s toplom mediteranskom estetikom.",
+          "result": "Web stranica fokusirana na konverzije",
+          "longDesc": "Apartmani Sunce je single-page web stranica dizajnirana za obiteljski smještaj na dalmatinskoj obali. Dizajn koristi tople mediteranske tonove, čist layout i storytelling pristup. Uključuje hero sekciju, osobnu priču, galeriju, pregled sadržaja i pogodnosti, booking formu i kartu lokacije. UX je fokusiran na jednostavnost, povjerenje i konverziju, uz smooth scroll animacije i punu responsive prilagodbu.",
+          "deliverables": ["Landing Page Design", "Responsive Design", "UX Writing", "Booking Flow", "Visual Identity"]
+        }
+      ]
+    },
+    "process": {
+      "badge": "Naš proces",
+      "heading": "Kako vašu ideju pretvaramo iz nule u gotov proizvod.",
+      "subheading": "Transparentan i suradnički proces — tako da uvijek znate na čemu radimo i zašto.",
+      "steps": [
+        {
+          "title": "Otkrij",
+          "description": "Počinjemo razumijevanjem vašeg poslovanja, korisnika i ciljeva kroz detaljne radionice i istraživanje. Bez pretpostavki — samo podaci i uvidi.",
+          "duration": "1 tjedan",
+          "activities": ["Intervjui sa stakeholderima", "Analiza konkurencije", "Istraživanje korisnika", "Definiranje ciljeva"]
+        },
+        {
+          "title": "Dizajniraj",
+          "description": "Uvode iz discovery faze pretvaramo u wireframeove, prototipe i high-fidelity dizajn — uz vašu povratnu informaciju i suradnju u svakom koraku.",
+          "duration": "1–2 tjedna",
+          "activities": ["Wireframing", "UI Design", "Testiranje prototipa", "Iteracije"]
+        },
+        {
+          "title": "Izgradi",
+          "description": "Naši developeri pretvaraju dizajn u funkcionalan proizvod kroz čist i održiv kod. U tijeku ste uz tjedne updateove i staging preglede.",
+          "duration": "2–4 tjedna",
+          "activities": ["Frontend development", "API integracija", "Optimizacija performansi", "QA testiranje"]
+        },
+        {
+          "title": "Lansiraj",
+          "description": "Brinemo o deploymentu, postavljamo analitiku i osiguravamo da je sve spremno za produkciju. Nakon toga pružamo podršku i nakon samog lansiranja.",
+          "duration": "4–6 tjedana",
+          "activities": ["Deployment", "Postavljanje analitike", "SEO handoff", "Podrška nakon lansiranja"]
+        }
+      ]
+    },
+    "testimonials": {
+      "badge": "Iskustva klijenata",
+      "heading": "Povjerenje osnivača i produktnih timova.",
+      "subheading": "Ne morate nam vjerovati na riječ — poslušajte ljude s kojima smo radili.",
+      "items": [
+        {
+          "quote": "Prije ilube prošli smo kroz dvije agencije. Oba puta dobili smo nešto što je izgledalo dobro, ali nije donosilo rezultate. Ovaj put bilo je potpuno drukčije — stvarno su propitivali naše pretpostavke.",
+          "result": "+35% stopa konverzije"
+        },
+        {
+          "quote": "Iskreno, bio sam skeptičan. Ali već na prvom pozivu došli su pripremljeni i s istraženom konkurencijom. Redizajn je trajao šest tjedana, a organski promet od tada se utrostručio.",
+          "result": "3× više organskog prometa"
+        },
+        {
+          "quote": "Najviše me impresioniralo koliko je malo vođenja trebalo s naše strane. Dao sam im okviran brief, a oni su se vratili s pitanjima kojih se ja ne bih ni sjetio. Završni proizvod je zbog toga ispao još bolji.",
+          "result": "+62% aktivacija triala"
+        },
+        {
+          "quote": "Ulazili smo na novo tržište i trebali smo izgledati kao da tamo pripadamo. iluba. nam je izgradila brend koji bi nas bilo sram nemati. Otvorio nam je vrata.",
+          "result": "Pan-europsko lansiranje"
+        },
+        {
+          "quote": "Scope je malo narastao s naše strane, ne s njihove. Riješili su to bez drame, zadržali rokove i nisu nam naplaćivali svaku sitnicu. To je rijetkost u ovoj industriji.",
+          "result": "+48% prijava za trial"
+        },
+        {
+          "quote": "Prije šest mjeseci nismo rangirali ni za što značajno. Danas smo na prvoj stranici za desetak pojmova koji stvarno dovode leadove. Sam SEO već je vratio cijenu projekta.",
+          "result": "+180% organskih sesija"
+        }
+      ]
+    },
+    "pricing": {
+      "badge": "Prilagođene Cijene",
+      "heading": "Svaki projekt je jedinstven. Kao i cijene.",
+      "subheading": "Radimo s tvrtkama svih veličina. Dobijte ponudu po mjeri na osnovi vašeg opsega, vremenskog okvira i ciljeva.",
+      "popular": "Popularno",
+      "mostPopular": "Najpopularnije",
+      "ctaButton": "Zatraži ponudu",
+      "plans": [
+        {
+          "name": "Starter",
+          "period": "jednokratno",
+          "tagline": "Savršeno za testiranje ideje ili testiranje tržišta.",
+          "features": [
+            "Dizajn i razvoj landing stranice",
+            "Responsive layout za sve uređaje",
+            "Osnovni SEO setup",
+            "Integracija Google Analyticsa",
+            "2 kruga revizija",
+            "Brza isporuka",
+            "Podrška nakon lansiranja"
+          ],
+          "cta": "Zatraži ponudu"
+        },
+        {
+          "name": "Growth",
+          "period": "jednokratno",
+          "tagline": "Za uspostavljene tvrtke spremne za skaliranje online.",
+          "features": [
+            "Kompletan dizajn i razvoj web stranice",
+            "Custom UI/UX design sistem",
+            "Sustav vizualnog identiteta",
+            "Tehnički SEO i optimizacija performansi",
+            "CMS i marketing automatizacija",
+            "3 mjeseca kontinuirane podrške",
+            "Neograničene revizije"
+          ],
+          "cta": "Zatraži ponudu"
+        },
+        {
+          "name": "Scale",
+          "period": "mjesečni retainer",
+          "tagline": "Posvećeno partnerstvo za kontinuirani rast i inovaciju.",
+          "features": [
+            "Product dizajn i development",
+            "Kontinuirana optimizacija",
+            "SEO i content strategija",
+            "Upravljanje plaćenim oglasima (Google, Meta)",
+            "Strategija društvenih mreža",
+            "Mjesečni izvještaji i analitika",
+            "Posvećen tim s pristupom Slacku"
+          ],
+          "cta": "Zatraži ponudu"
+        }
+      ]
+    },
+    "about": {
+      "badge": "O nama",
+      "heading": "Studio s dva osnivača koji isporučuje više nego što biste očekivali.",
+      "p1": "iluba. je nezavisni digitalni studio koji su osnovali <bold>Ivan & Josip</bold> — developer i dizajner kojima je dosadilo gledati kako odlični proizvodi propadaju zbog lošeg digitalnog iskustva.",
+      "p2": "Pokrenuli smo ilubu. kako bismo ponudili ono što velike agencije često ne mogu: fokusiranu pažnju, stvarnu kvalitetu izrade i partnerski model u kojem uvijek razgovarate s ljudima koji zaista rade posao. Bez account managera, bez prebacivanja na juniore.",
+      "p3": "U posljednje četiri godine pomogli smo startupima prikupiti investicije, malim i srednjim tvrtkama utrostručiti organski promet i osnivačima lansirati proizvode koje njihovi korisnici zaista vole.",
+      "stats": [
+        { "value": "4+", "label": "Godine poslovanja" },
+        { "value": "30+", "label": "Isporučenih projekata" },
+        { "value": "5+", "label": "Zemalja" }
+      ],
+      "founders": [
+        { "role": "Co-founder · Dev Lead" },
+        { "role": "Co-founder · Design Lead" }
+      ],
+      "values": [
+        {
+          "title": "Briga ispred puke isporuke",
+          "desc": "Svaki projekt tretiramo kao da je riječ o našem vlastitom poslovanju. Kvaliteta nije dodatna opcija — ona je standard."
+        },
+        {
+          "title": "Globalna perspektiva",
+          "desc": "Radili smo s klijentima iz više od 5 zemalja i znamo kako dizajnirati za raznoliku publiku."
+        },
+        {
+          "title": "Kvaliteta na svakoj razini",
+          "desc": "Od pixel-perfect UI-ja do čiste arhitekture koda — kod nas nema rezanja kutova."
+        }
+      ]
+    },
+    "faq": {
+      "badge": "FAQ",
+      "heading": "Sve što trebate znati.",
+      "subheading": "Imate pitanje koje ovdje nije navedeno? Rezervirajte poziv i odgovorit ćemo vam izravno.",
+      "items": [
+        {
+          "question": "Koliko traje tipičan projekt?",
+          "answer": "Ovisi o opsegu projekta. Landing stranica obično traje 5–10 radnih dana. Kompletna web stranica ili product design projekt najčešće traje 6–10 tjedana od kickoffa do lansiranja. Nakon discovery poziva dat ćemo vam precizan vremenski okvir. Uvijek postavljamo realne rokove — i držimo ih se."
+        },
+        {
+          "question": "Što je uključeno u projekt web dizajna i developmenta?",
+          "answer": "Svaki projekt uključuje discovery radionicu, UX wireframeove, high-fidelity UI dizajn, frontend development, prilagodbu za mobilne uređaje, osnovni SEO setup, integraciju Google Analyticsa i podršku nakon lansiranja. Paketi više razine uključuju i vizualni identitet, CMS integraciju, napredni SEO i kontinuiranu podršku. Prije početka precizno definiramo što vam točno treba."
+        },
+        {
+          "question": "Nudite li digitalni marketing i usluge rasta?",
+          "answer": "Da. Uz dizajn i development nudimo SEO optimizaciju, content strategiju, upravljanje društvenim mrežama i digitalni marketing. Te su usluge dostupne u sklopu našeg Scale retainer paketa ili kao zasebni projekti. Sve mjerimo — tako da uvijek znate koliki je ROI onoga što radimo."
+        },
+        {
+          "question": "Mogu li rezervirati poziv i razgovarati o projektu prije nego što se obvežem?",
+          "answer": "Da, i to toplo preporučujemo. Nudimo besplatan 30-minutni discovery poziv tijekom kojeg ćemo upoznati vaše ciljeve, izazove i budžet — a vi možete procijeniti jesmo li pravi partner za vas. Nema nikakve obveze. Korištenjem forme u kontakt sekciji ispod možete nam se javiti."
+        },
+        {
+          "question": "Kako rješavate revizije i feedback?",
+          "answer": "Revizije su sastavni dio našeg procesa. Radimo kroz suradničke feedback loopove — pregledavate wireframeove prije UI dizajna i staging verzije prije lansiranja. Starter paket uključuje 2 formalna kruga revizija; Growth i Scale nude neograničene revizije unutar definiranog scopea. Za review dizajna koristimo Figma-u, a za async video walkthroughove Loom."
+        },
+        {
+          "question": "Nudite li SEO kao zasebnu uslugu?",
+          "answer": "Da. Nudimo tehničke SEO audite, on-page optimizaciju, content strategiju i link building kao zasebne usluge. Ako već imate web stranicu i želite samo poboljšati organsku vidljivost, možemo definirati SEO projekt koji odgovara vašem budžetu i ciljevima. Rezervirajte poziv za besplatan preliminarni audit."
+        }
+      ]
+    },
+    "contact": {
+      "badge": "Radimo Zajedno",
+      "heading": "Ispričajte nam o svojem projektu.",
+      "subheading": "Podijelite svoje ciljeve i izazove. Pregledavamo sve i javimo vam se u roku od 24 sata s planom i vremenskim okvirom.",
+      "formHeading": "Bilješka o projektu",
+      "form": {
+        "namePlaceholder": "Vaše ime",
+        "emailPlaceholder": "vaš@email.com",
+        "selectType": "Odaberite vrstu projekta",
+        "webDesign": "Web Dizajn",
+        "development": "Development",
+        "branding": "Branding",
+        "seoGrowth": "SEO & Rast",
+        "other": "Ostalo",
+        "messagePlaceholder": "Ispričajte nam o projektu, ciljevima i vremenskom okviru...",
+        "sendButton": "Pošalji poruku",
+        "sending": "Slanje...",
+        "messageSent": "Poruka poslana! Javit ćemo vam se uskoro ✓"
+      },
+      "info": [
+        {
+          "title": "Vrijeme odgovora",
+          "desc": "Obično odgovaramo u roku od 24 sata na radne dane."
+        },
+        {
+          "title": "Lokacija i Radno vrijeme",
+          "desc": "Ponedjeljak – Petak\n09:00 – 17:00 CET"
+        },
+        {
+          "title": "Pošaljite nam email",
+          "desc": "hello@iluba.co za hitne stvari"
+        }
+      ]
+    },
+    "footer": {
+      "tagline": "Pomažemo startupima i modernim tvrtkama da brže lansiraju, bolje konvertiraju i rastu online — kroz strateški web dizajn i custom digitalne proizvode.",
+      "services": {
+        "heading": "Usluge",
+        "uiux": "UI/UX Dizajn",
+        "webDev": "Web Development",
+        "brand": "Vizualni identitet",
+        "seo": "SEO i rast",
+        "marketing": "Digitalni marketing"
+      },
+      "company": {
+        "heading": "Tvrtka",
+        "about": "O nama",
+        "work": "Odabrani radovi",
+        "process": "Naš proces",
+        "pricing": "Cijene",
+        "faq": "FAQ"
+      },
+      "contact": {
+        "heading": "Kontakt",
+        "bookCall": "Rezerviraj poziv"
+      },
+      "rights": "© {{year}} iluba. Sva prava pridržana.",
+      "available": "Dostupni za nove projekte"
+    }
+  }

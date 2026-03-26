@@ -1,77 +1,26 @@
 import { useReveal } from "../hooks/useReveal";
-import { Palette, Code2, TrendingUp, ArrowRight } from "lucide-react";
+import { Palette, Code2, TrendingUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-const services = [
-  {
-    icon: Palette,
-    category: "Design",
-    color: "#FF5C35",
-    bg: "rgba(255,92,53,0.07)",
-    description:
-      "We craft user experiences that feel inevitable — clean, intuitive, and built to convert.",
-    items: [
-      {
-        title: "UI/UX Design",
-        desc: "Full-stack interface design from wireframes to polished, production-ready screens.",
-      },
-      {
-        title: "Product Design",
-        desc: "End-to-end product thinking: research, prototyping, and iterative design systems.",
-      },
-      {
-        title: "Brand Identity",
-        desc: "Visual identity systems that position your brand as a category leader.",
-      },
-    ],
-  },
-  {
-    icon: Code2,
-    category: "Development",
-    color: "#0D0D0D",
-    bg: "rgba(13,13,13,0.05)",
-    description:
-      "Fast, robust code built to scale — from pixel-perfect landing pages to custom web apps.",
-    items: [
-      {
-        title: "Web Development",
-        desc: "Modern React & Next.js applications built for performance and maintainability.",
-      },
-      {
-        title: "Landing Pages",
-        desc: "High-converting landing pages that turn traffic into qualified leads.",
-      },
-      {
-        title: "Custom Web Solutions",
-        desc: "Bespoke platforms, dashboards, and tools tailored to your exact needs.",
-      },
-    ],
-  },
-  {
-    icon: TrendingUp,
-    category: "Digital Growth",
-    color: "#22C55E",
-    bg: "rgba(34,197,94,0.07)",
-    description:
-      "Sustainable growth strategies that increase visibility, traffic, and revenue.",
-    items: [
-      {
-        title: "SEO Optimization",
-        desc: "Technical and content SEO to rank higher and attract qualified organic traffic.",
-      },
-      {
-        title: "Digital Marketing",
-        desc: "Data-driven paid campaigns and content strategies that move the needle.",
-      },
-      {
-        title: "Social Media Management",
-        desc: "Brand-consistent content and community management across all key channels.",
-      },
-    ],
-  },
-];
+const serviceIcons = [Palette, Code2, TrendingUp];
+const serviceColors = ["#FF5C35", "#0D0D0D", "#22C55E"];
+const serviceBgs = ["rgba(255,92,53,0.07)", "rgba(13,13,13,0.05)", "rgba(34,197,94,0.07)"];
+
+type ServiceItem = { title: string; desc: string };
+type ServiceData = { category: string; description: string; subitems: ServiceItem[] };
 
 export function Services() {
   const { ref, visible } = useReveal();
+  const { t } = useTranslation();
+
+  const services = (t("services.items", { returnObjects: true }) as ServiceData[]).map(
+    (item, i) => ({
+      ...item,
+      icon: serviceIcons[i],
+      color: serviceColors[i],
+      bg: serviceBgs[i],
+    })
+  );
 
   return (
     <section id="services" ref={ref} className="py-28 px-6 bg-white">
@@ -82,16 +31,16 @@ export function Services() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
             style={{ background: "rgba(255,92,53,0.08)", color: "#FF5C35" }}>
-            Services
+            {t("services.badge")}
           </div>
           <h2
             className="text-[#0D0D0D] max-w-xl"
             style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 800, lineHeight: 1.15, letterSpacing: "-0.025em" }}
           >
-            Everything your business needs to grow online.
+            {t("services.heading")}
           </h2>
           <p className="text-[#666] mt-4 max-w-lg" style={{ fontSize: "1.05rem", lineHeight: 1.7 }}>
-            We offer a full spectrum of digital services — from brand creation to shipping and scaling your product.
+            {t("services.subheading")}
           </p>
         </div>
 
@@ -123,7 +72,7 @@ export function Services() {
                 </h3>
                 <p className="text-[#777] text-sm mb-6 leading-relaxed">{service.description}</p>
                 <div className="space-y-4">
-                  {service.items.map((item) => (
+                  {service.subitems.map((item) => (
                     <div key={item.title} className="flex gap-3">
                       <div
                         className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0"

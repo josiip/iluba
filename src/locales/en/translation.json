@@ -1,0 +1,338 @@
+{
+  "nav": {
+    "services": "Services",
+    "work": "Work",
+    "process": "Process",
+    "pricing": "Pricing",
+    "about": "About",
+    "faq": "FAQ",
+    "startProject": "Start a project"
+  },
+  "hero": {
+    "available": "Available for projects",
+    "headline1": "Designing digital products",
+    "that":"that",
+    "headline2": "stand out.",
+    "tagline": "We help ambitious startups and modern businesses transform their digital presence - delivering conversion-focused design, high-performance development, and measurable growth results.",
+    "ctaPrimary": "Start a project",
+    "ctaSecondary": "View our work",
+    "stats": [
+      { "value": "30+", "label": "Projects delivered" },
+      { "value": "100%", "label": "Client satisfaction" },
+      { "value": "4+", "label": "Years in business" }
+    ],
+    "scroll": "Scroll"
+  },
+  "services": {
+    "badge": "Services",
+    "heading": "Everything your business needs to grow online.",
+    "subheading": "We offer a full spectrum of digital services — from brand creation to shipping and scaling your product.",
+    "items": [
+      {
+        "category": "Design",
+        "description": "We craft user experiences that feel inevitable — clean, intuitive, and built to convert.",
+        "subitems": [
+          { "title": "UI/UX Design", "desc": "Full-stack interface design from wireframes to polished, production-ready screens." },
+          { "title": "Product Design", "desc": "End-to-end product thinking: research, prototyping, and iterative design systems." },
+          { "title": "Brand Identity", "desc": "Visual identity systems that position your brand as a category leader." }
+        ]
+      },
+      {
+        "category": "Development",
+        "description": "Fast, robust code built to scale — from pixel-perfect landing pages to custom web apps.",
+        "subitems": [
+          { "title": "Web Development", "desc": "Modern React & Next.js applications built for performance and maintainability." },
+          { "title": "Landing Pages", "desc": "High-converting landing pages that turn traffic into qualified leads." },
+          { "title": "Custom Web Solutions", "desc": "Bespoke platforms, dashboards, and tools tailored to your exact needs." }
+        ]
+      },
+      {
+        "category": "Digital Growth",
+        "description": "Sustainable growth strategies that increase visibility, traffic, and revenue.",
+        "subitems": [
+          { "title": "SEO Optimization", "desc": "Technical and content SEO to rank higher and attract qualified organic traffic." },
+          { "title": "Digital Marketing", "desc": "Data-driven paid campaigns and content strategies that move the needle." },
+          { "title": "Social Media Management", "desc": "Brand-consistent content and community management across all key channels." }
+        ]
+      }
+    ]
+  },
+  "work": {
+    "badge": "Selected Work",
+    "heading": "Work we're proud to ship.",
+    "subheading": "Real projects, real results. Every case study is a story of close collaboration and measurable outcomes.",
+    "deliverablesLabel": "Deliverables",
+    "startSimilar": "Start a similar project",
+    "projects": [
+      {
+        "category": "Web & Mobile Design",
+        "tags": ["Fintech", "SaaS", "Dashboard"],
+        "description": "Modern B2B SaaS fintech dashboard designed for financial management with a clean dark mode interface and real-time data visualization.",
+        "result": "Modern SaaS dashboard experience",
+        "longDesc": "Velo is a modern fintech dashboard concept built for efficient financial management. The platform features structured sidebar navigation with sections for Dashboard, Analytics, Transactions, Accounts and Payments. It includes KPI metrics, revenue charts, account balances, expense breakdown, cash flow visualization and recent transactions. The design focuses on a professional dark interface, clear data hierarchy, interactive charts and responsive layouts optimized for real-time financial monitoring.",
+        "deliverables": ["Dashboard UI Design", "UX Structure", "Data Visualization", "Responsive Layout", "Design System"]
+      },
+      {
+        "category": "Web & Mobile Design",
+        "tags": ["SaaS", "HR", "Dashboard"],
+        "description": "Modern enterprise HR platform designed for small and mid-sized teams with a clean SaaS interface and structured purple visual system.",
+        "result": "Complete HR dashboard system",
+        "longDesc": "Orbit HR is a full-featured HR platform dashboard designed for team management. It includes onboarding flows, team dashboard, employee directory, leave management, performance reviews, analytics, document management and organizational structure. The UI follows a clean purple SaaS aesthetic with clear hierarchy, sticky headers, notification states and responsive layouts. Built as a modern product dashboard optimized for usability and everyday team operations.",
+        "deliverables": ["UX/UI Design", "Dashboard System", "Responsive Design", "Design System", "User Flows"]
+      },
+      {
+        "category": "Web & Mobile Design",
+        "tags": ["E-commerce", "Fashion", "Brand"],
+        "description": "Luxury boutique fashion e-commerce website with a minimalist, high-end aesthetic inspired by modern Shopify stores.",
+        "result": "High-end fashion web experience",
+        "longDesc": "Mara Studio is a luxury fashion e-commerce concept built with a minimalist editorial approach. It features serif typography, soft cream tones and clean layouts. The website includes homepage with hero and featured products, shop with filters, product pages with detailed options, lookbook, brand storytelling and newsletter integration. Fully responsive design optimized for desktop, tablet and mobile with a focus on elegant product presentation.",
+        "deliverables": ["E-commerce Design", "UI System", "Responsive Layout", "Product Pages", "Brand Experience"]
+      },
+      {
+        "category": "Web & Mobile Design",
+        "tags": ["Hospitality", "Booking", "Landing Page"],
+        "description": "Single-page promotional website for a family-run apartment rental with a warm Mediterranean aesthetic.",
+        "result": "Conversion-focused rental website",
+        "longDesc": "Apartmani Sunce is a single-page website designed for a family-run rental on the Dalmatian coast. The design uses warm Mediterranean tones with a clean layout and storytelling approach. It includes a hero section, personal story, gallery, amenities overview, booking form and location map. The UX focuses on simplicity, trust and conversion, with smooth scroll animations and full responsiveness.",
+        "deliverables": ["Landing Page Design", "Responsive Design", "UX Writing", "Booking Flow", "Visual Identity"]
+      }
+    ]
+  },
+  "process": {
+    "badge": "Our Process",
+    "heading": "How we take your idea from zero to live.",
+    "subheading": "A transparent, collaborative process — so you always know what we're working on and why.",
+    "steps": [
+      {
+        "title": "Discover",
+        "description": "We start by understanding your business, users, and goals through deep-dive workshops and research. No assumptions — just data and insight.",
+        "duration": "Week 1",
+        "activities": ["Stakeholder interviews", "Competitive analysis", "User research", "Goal definition"]
+      },
+      {
+        "title": "Design",
+        "description": "We translate discovery insights into wireframes, prototypes, and high-fidelity designs — with your feedback and collaboration at every step.",
+        "duration": "Week 1-2",
+        "activities": ["Wireframing", "UI Design", "Prototype testing", "Iteration"]
+      },
+      {
+        "title": "Build",
+        "description": "Our engineers bring the designs to life with clean, maintainable code. We keep you in the loop with weekly updates and staging previews.",
+        "duration": "Week 2-4",
+        "activities": ["Frontend development", "API integration", "Performance optimisation", "QA testing"]
+      },
+      {
+        "title": "Launch",
+        "description": "We handle deployment, set up analytics, and make sure everything is production-ready. Then we support you through and beyond launch.",
+        "duration": "Week 4-6",
+        "activities": ["Deployment", "Analytics setup", "SEO handoff", "Post-launch support"]
+      }
+    ]
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "heading": "Trusted by founders and product teams.",
+    "subheading": "Don't take our word for it — hear from the people we've worked with.",
+    "items": [
+      {
+        "quote": "We'd been through two agencies before iluba. Both times we got something that looked fine but didn't convert. This time was completely different — they actually challenged our assumptions.",
+        "result": "+35% conversion rate"
+      },
+      {
+        "quote": "Honestly, I was skeptical. But they came into our first call having already researched our competitors. The redesign took six weeks and organic traffic has tripled since.",
+        "result": "3× organic traffic"
+      },
+      {
+        "quote": "What stood out was how little hand-holding was needed. I gave them a rough brief, they came back with questions I hadn't thought to ask, and the final product was better for it.",
+        "result": "+62% trial activations"
+      },
+      {
+        "quote": "We were going into a new market and needed to look like we belonged there. iluba. built us a brand that we'd have been embarrassed not to have. It opened doors.",
+        "result": "Pan-European launch"
+      },
+      {
+        "quote": "The scope crept a bit on our end, not theirs. They handled it without drama, kept the timeline intact, and didn't nickel and dime us. That's rare in this industry.",
+        "result": "+48% trial signups"
+      },
+      {
+        "quote": "Six months ago we weren't ranking for anything meaningful. Now we're on the first page for a dozen terms that actually bring in leads. The SEO work alone paid back the project cost.",
+        "result": "+180% organic sessions"
+      }
+    ]
+  },
+  "pricing": {
+    "badge": "Custom Pricing",
+    "heading": "Every project is unique. So is pricing.",
+    "subheading": "We work with businesses of all sizes. Get a custom quote based on your scope, timeline, and goals.",
+    "popular": "Popular",
+    "mostPopular": "Most Popular",
+    "ctaButton": "Get a quote",
+    "plans": [
+      {
+        "name": "Starter",
+        "period": "one-time",
+        "tagline": "Perfect for validating an idea or testing the market.",
+        "features": [
+          "Landing page design & development",
+          "Mobile-responsive layout",
+          "Basic SEO setup",
+          "Google Analytics integration",
+          "2 rounds of revisions",
+          "5-day delivery",
+          "Post-launch support"
+        ],
+        "cta": "Get a quote"
+      },
+      {
+        "name": "Growth",
+        "period": "one-time",
+        "tagline": "For established businesses ready to scale online.",
+        "features": [
+          "Full website design & development",
+          "Custom UI/UX design system",
+          "Brand identity system",
+          "Technical SEO & performance optimization",
+          "CMS & marketing automation",
+          "3 months ongoing support",
+          "Unlimited revisions"
+        ],
+        "cta": "Get a quote"
+      },
+      {
+        "name": "Scale",
+        "period": "monthly retainer",
+        "tagline": "Dedicated partnership for ongoing growth and innovation.",
+        "features": [
+          "Product design & development",
+          "Continuous optimization",
+          "SEO & content strategy",
+          "Paid ads management (Google, Meta)",
+          "Social media strategy",
+          "Monthly reporting & analytics",
+          "Dedicated team with Slack access"
+        ],
+        "cta": "Get a quote"
+      }
+    ]
+  },
+  "about": {
+    "badge": "About Us",
+    "heading": "A two-founder studio that punches above its weight.",
+    "p1": "iluba. is an independent digital studio founded by <bold>Ivan & Josip</bold> — a developer and a designer who got tired of watching great products fail because of bad digital experiences.",
+    "p2": "We started iluba. to offer what the big agencies can't: focused attention, genuine craft, and a partnership model where you're always talking to the people doing the actual work. No account managers, no handoffs to junior teams.",
+    "p3": "Over the past four years, we've helped startups raise funding, SMEs triple their organic traffic, and founders launch products that their users actually love.",
+    "stats": [
+      { "value": "4+", "label": "Years in business" },
+      { "value": "30+", "label": "Projects shipped" },
+      { "value": "5+", "label": "Countries" }
+    ],
+    "founders": [
+      { "role": "Co-founder · Dev Lead" },
+      { "role": "Co-founder · Design Lead" }
+    ],
+    "values": [
+      {
+        "title": "Care over output",
+        "desc": "We treat every project as if it's our own business on the line. Quality isn't optional — it's the baseline."
+      },
+      {
+        "title": "Global perspective",
+        "desc": "We've worked with clients across 5+ countries and understand how to design for diverse audiences."
+      },
+      {
+        "title": "Craft at every level",
+        "desc": "From pixel-perfect UI to clean code architecture — we don't cut corners, ever."
+      }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "heading": "Everything you need to know.",
+    "subheading": "Have a question not listed here? Book a call and we'll answer it directly.",
+    "items": [
+      {
+        "question": "How long does a typical project take?",
+        "answer": "It depends on the scope. A landing page typically takes 5–10 business days. A full website or product design project usually takes 6–10 weeks from kickoff to launch. We'll give you a precise timeline after our discovery call. We always set realistic deadlines — and we stick to them."
+      },
+      {
+        "question": "What's included in a web design and development project?",
+        "answer": "Every project includes a discovery workshop, UX wireframes, high-fidelity UI design, frontend development, mobile responsiveness, basic SEO setup, Google Analytics integration, and post-launch support. Higher-tier packages include brand identity, CMS integration, advanced SEO, and ongoing support. We'll scope exactly what you need before starting."
+      },
+      {
+        "question": "Do you provide digital marketing and growth services?",
+        "answer": "Yes. In addition to design and development, we offer SEO optimization, content strategy, social media management, and digital marketing services. These are available as part of our Scale retainer plan, or can be scoped as standalone projects. We measure everything — you'll always know the ROI of what we're doing."
+      },
+      {
+        "question": "Can I book a call to discuss my project before committing?",
+        "answer": "Yes, and we highly encourage it. We offer a free 30-minute discovery call where we'll learn about your goals, challenges, and budget — and you can evaluate whether we're the right fit. There's no obligation. You can book using the form in the contact section below."
+      },
+      {
+        "question": "How do you handle revisions and feedback?",
+        "answer": "Revisions are built into our process. We work in collaborative feedback loops — you'll review wireframes before UI, and staging previews before launch. Our Starter plan includes 2 formal revision rounds; Growth and Scale offer unlimited revisions within scope. We use Figma for design reviews and Loom for async video walkthroughs."
+      },
+      {
+        "question": "Do you offer SEO as a standalone service?",
+        "answer": "Yes. We offer technical SEO audits, on-page optimisation, content strategy, and link-building as standalone services. If you already have a website and just want to improve organic visibility, we can scope an SEO project that fits your budget and goals. Book a call to get a free preliminary audit."
+      }
+    ]
+  },
+  "contact": {
+    "badge": "Let's Work Together",
+    "heading": "Tell us about your project.",
+    "subheading": "Share your goals and challenges. We'll review and get back to you within 24 hours with a plan and timeline.",
+    "formHeading": "Project Brief",
+    "form": {
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "your@email.com",
+      "selectType": "Select project type",
+      "webDesign": "Web Design",
+      "development": "Development",
+      "branding": "Branding",
+      "seoGrowth": "SEO & Growth",
+      "other": "Other",
+      "messagePlaceholder": "Tell us about your project, goals, and timeline...",
+      "sendButton": "Send message",
+      "sending": "Sending...",
+      "messageSent": "Message sent! We'll get back to you soon ✓"
+    },
+    "info": [
+      {
+        "title": "Response time",
+        "desc": "We typically respond within 24 hours on business days."
+      },
+      {
+        "title": "Location & Hours",
+        "desc": "Monday – Friday\n09:00 – 17:00 CET"
+      },
+      {
+        "title": "Email us directly",
+        "desc": "hello@iluba.co"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "We help startups and modern businesses launch faster, convert better, and grow online — through strategic web design and custom digital products.",
+    "services": {
+      "heading": "Services",
+      "uiux": "UI/UX Design",
+      "webDev": "Web Development",
+      "brand": "Brand Identity",
+      "seo": "SEO & Growth",
+      "marketing": "Digital Marketing"
+    },
+    "company": {
+      "heading": "Company",
+      "about": "About Us",
+      "work": "Selected Work",
+      "process": "Our Process",
+      "pricing": "Pricing",
+      "faq": "FAQ"
+    },
+    "contact": {
+      "heading": "Contact",
+      "bookCall": "Book a Call"
+    },
+    "rights": "© {{year}} iluba. All rights reserved.",
+    "available": "Available for projects"
+  }
+}

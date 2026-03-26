@@ -1,55 +1,35 @@
 import { useReveal } from "../hooks/useReveal";
 import { Search, Lightbulb, Code2, Rocket } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-const steps = [
-  {
-    number: "01",
-    icon: Search,
-    title: "Discover",
-    color: "#FF5C35",
-    bg: "rgba(255,92,53,0.08)",
-    description:
-      "We start by understanding your business, users, and goals through deep-dive workshops and research. No assumptions — just data and insight.",
-    duration: "Week 1",
-    activities: ["Stakeholder interviews", "Competitive analysis", "User research", "Goal definition"],
-  },
-  {
-    number: "02",
-    icon: Lightbulb,
-    title: "Design",
-    color: "#8B5CF6",
-    bg: "rgba(139,92,246,0.08)",
-    description:
-      "We translate discovery insights into wireframes, prototypes, and high-fidelity designs — with your feedback and collaboration at every step.",
-    duration: "Week 1-2",
-    activities: ["Wireframing", "UI Design", "Prototype testing", "Iteration"],
-  },
-  {
-    number: "03",
-    icon: Code2,
-    title: "Build",
-    color: "#0EA5E9",
-    bg: "rgba(14,165,233,0.08)",
-    description:
-      "Our engineers bring the designs to life with clean, maintainable code. We keep you in the loop with weekly updates and staging previews.",
-    duration: "Week 2-4",
-    activities: ["Frontend development", "API integration", "Performance optimisation", "QA testing"],
-  },
-  {
-    number: "04",
-    icon: Rocket,
-    title: "Launch",
-    color: "#22C55E",
-    bg: "rgba(34,197,94,0.08)",
-    description:
-      "We handle deployment, set up analytics, and make sure everything is production-ready. Then we support you through and beyond launch.",
-    duration: "Week 4-6",
-    activities: ["Deployment", "Analytics setup", "SEO handoff", "Post-launch support"],
-  },
+const stepIcons = [Search, Lightbulb, Code2, Rocket];
+const stepColors = ["#FF5C35", "#8B5CF6", "#0EA5E9", "#22C55E"];
+const stepBgs = [
+  "rgba(255,92,53,0.08)",
+  "rgba(139,92,246,0.08)",
+  "rgba(14,165,233,0.08)",
+  "rgba(34,197,94,0.08)",
 ];
+
+type StepData = {
+  title: string;
+  description: string;
+  duration: string;
+  activities: string[];
+};
 
 export function Process() {
   const { ref, visible } = useReveal();
+  const { t } = useTranslation();
+
+  const stepsData = t("process.steps", { returnObjects: true }) as StepData[];
+  const steps = stepsData.map((step, i) => ({
+    ...step,
+    number: String(i + 1).padStart(2, "0"),
+    icon: stepIcons[i],
+    color: stepColors[i],
+    bg: stepBgs[i],
+  }));
 
   return (
     <section id="process" ref={ref} className="py-20 md:py-28 px-6 bg-white">
@@ -62,16 +42,16 @@ export function Process() {
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
             style={{ background: "rgba(255,92,53,0.08)", color: "#FF5C35" }}
           >
-            Our Process
+            {t("process.badge")}
           </div>
           <h2
             className="text-[#0D0D0D] max-w-xl"
             style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 800, lineHeight: 1.15, letterSpacing: "-0.025em" }}
           >
-            How we take your idea from zero to live.
+            {t("process.heading")}
           </h2>
           <p className="text-[#666] mt-4 max-w-lg" style={{ fontSize: "1.05rem", lineHeight: 1.7 }}>
-            A transparent, collaborative process — so you always know what we're working on and why.
+            {t("process.subheading")}
           </p>
         </div>
 

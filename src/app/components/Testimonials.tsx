@@ -1,71 +1,24 @@
 import { useReveal } from "../hooks/useReveal";
 import { Star } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-const testimonials = [
-  {
-    quote:
-      "We'd been through two agencies before iluba. Both times we got something that looked fine but didn't convert. This time was completely different — they actually challenged our assumptions.",
-    name: "James Whitfield",
-    role: "CEO",
-    company: "Velo Finance",
-    result: "+35% conversion rate",
-    avatar: "JW",
-    color: "#5B5BD6",
-  },
-  {
-    quote:
-      "Honestly, I was skeptical. But they came into our first call having already researched our competitors. The redesign took six weeks and organic traffic has tripled since.",
-    name: "Sara Jensen",
-    role: "Head of Product",
-    company: "Trove Platform",
-    result: "3× organic traffic",
-    avatar: "SJ",
-    color: "#22C55E",
-  },
-  {
-    quote:
-      "What stood out was how little hand-holding was needed. I gave them a rough brief, they came back with questions I hadn't thought to ask, and the final product was better for it.",
-    name: "Marko Horvat",
-    role: "Founder",
-    company: "Pulse App",
-    result: "+62% trial activations",
-    avatar: "MH",
-    color: "#F59E0B",
-  },
-  {
-    quote:
-      "We were going into a new market and needed to look like we belonged there. iluba. built us a brand that we'd have been embarrassed not to have. It opened doors.",
-    name: "Amina Boussaid",
-    role: "Co-founder & CMO",
-    company: "Nomi Brand",
-    result: "Pan-European launch",
-    avatar: "AB",
-    color: "#FF5C35",
-  },
-  {
-    quote:
-      "The scope crept a bit on our end, not theirs. They handled it without drama, kept the timeline intact, and didn't nickel and dime us. That's rare in this industry.",
-    name: "Tom Erikson",
-    role: "CPO",
-    company: "Buildwise SaaS",
-    result: "+48% trial signups",
-    avatar: "TE",
-    color: "#0EA5E9",
-  },
-  {
-    quote:
-      "Six months ago we weren't ranking for anything meaningful. Now we're on the first page for a dozen terms that actually bring in leads. The SEO work alone paid back the project cost.",
-    name: "Priya Sharma",
-    role: "Growth Lead",
-    company: "Renova Group",
-    result: "+180% organic sessions",
-    avatar: "PS",
-    color: "#8B5CF6",
-  },
+const testimonialMeta = [
+  { name: "James Whitfield", role: "CEO", company: "Velo Finance", avatar: "JW", color: "#5B5BD6" },
+  { name: "Sara Jensen", role: "Head of Product", company: "Trove Platform", avatar: "SJ", color: "#22C55E" },
+  { name: "Marko Horvat", role: "Founder", company: "Pulse App", avatar: "MH", color: "#F59E0B" },
+  { name: "Amina Boussaid", role: "Co-founder & CMO", company: "Nomi Brand", avatar: "AB", color: "#FF5C35" },
+  { name: "Tom Erikson", role: "CPO", company: "Buildwise SaaS", avatar: "TE", color: "#0EA5E9" },
+  { name: "Priya Sharma", role: "Growth Lead", company: "Renova Group", avatar: "PS", color: "#8B5CF6" },
 ];
+
+type TestimonialTranslation = { quote: string; result: string };
 
 export function Testimonials() {
   const { ref, visible } = useReveal();
+  const { t } = useTranslation();
+
+  const translatedItems = t("testimonials.items", { returnObjects: true }) as TestimonialTranslation[];
+  const testimonials = translatedItems.map((item, i) => ({ ...item, ...testimonialMeta[i] }));
 
   return (
     <section
@@ -83,16 +36,16 @@ export function Testimonials() {
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
             style={{ background: "rgba(255,92,53,0.08)", color: "#FF5C35" }}
           >
-            Testimonials
+            {t("testimonials.badge")}
           </div>
           <h2
             className="text-[#0D0D0D] max-w-xl"
             style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 800, lineHeight: 1.15, letterSpacing: "-0.025em" }}
           >
-            Trusted by founders and product teams.
+            {t("testimonials.heading")}
           </h2>
           <p className="text-[#666] mt-4 max-w-lg" style={{ fontSize: "1.05rem", lineHeight: 1.7 }}>
-            Don't take our word for it — hear from the people we've worked with.
+            {t("testimonials.subheading")}
           </p>
         </div>
 

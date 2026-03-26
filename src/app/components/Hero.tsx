@@ -1,8 +1,12 @@
 import { useEffect, useRef } from "react";
-import { ArrowRight, Sparkles, Dot } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function Hero() {
+  const { t } = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
+
+  const stats = t("hero.stats", { returnObjects: true }) as Array<{ value: string; label: string }>;
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -95,7 +99,7 @@ export function Hero() {
               className="w-2 h-2 rounded-full bg-green-500"
               style={{ animation: "pulse 2s ease-in-out infinite" }}
             />
-            <span className="text-[#6B7280] text-sm font-medium">Available for projects</span>
+            <span className="text-[#6B7280] text-sm font-medium">{t("hero.available")}</span>
           </div>
         </div>
 
@@ -111,8 +115,8 @@ export function Hero() {
             opacity: 0,
           }}
         >
-          Designing digital products
-          <br /> that {" "}
+          {t("hero.headline1")}
+          <br /> {t("hero.that")} {" "}
           <span
             style={{
               background: "linear-gradient(135deg, #FF5C35 0%, #FF8A65 50%, #FF5C35 100%)",
@@ -121,9 +125,8 @@ export function Hero() {
               backgroundClip: "text",
             }}
           >
-             stand out.
+             {t("hero.headline2")}
           </span>
-          
         </h1>
 
         {/* Tagline */}
@@ -136,9 +139,7 @@ export function Hero() {
             opacity: 0,
           }}
         >
-          We help ambitious startups and modern businesses transform their
-          digital presence - delivering conversion-focused design, high-performance
-          development, and measurable growth results.
+          {t("hero.tagline")}
         </p>
 
         {/* CTAs */}
@@ -154,7 +155,7 @@ export function Hero() {
               boxShadow: "0 8px 32px rgba(255,92,53,0.35)",
             }}
           >
-            Start a project
+            {t("hero.ctaPrimary")}
             <ArrowRight
               size={18}
               className="transition-transform duration-200 group-hover:translate-x-1"
@@ -164,7 +165,7 @@ export function Hero() {
             onClick={() => scrollTo("#work")}
             className="flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-base text-[#0D0D0D] border border-[#E0E0E0] bg-white hover:border-[#FF5C35] hover:text-[#FF5C35] transition-all duration-200 hover:scale-[1.02]"
           >
-            View our work
+            {t("hero.ctaSecondary")}
           </button>
         </div>
 
@@ -173,12 +174,7 @@ export function Hero() {
           className="mt-12 md:mt-16 grid grid-cols-2 md:flex md:flex-row items-center justify-center gap-6 md:gap-10"
           style={{ animation: "fadeInUp 0.7s ease 0.45s forwards", opacity: 0 }}
         >
-          {[
-            { value: "30+", label: "Projects delivered" },
-            { value: "100%", label: "Client satisfaction" },
-            { value: "3×", label: "Avg. conversion lift" },
-            { value: "5+", label: "Countries served" },
-          ].map((stat) => (
+          {stats.map((stat) => (
             <div key={stat.value} className="text-center">
               <div
                 className="font-bold text-[#0D0D0D]"
@@ -197,7 +193,7 @@ export function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         style={{ animation: "fadeIn 1.5s ease 1s forwards", opacity: 0 }}
       >
-        <span className="text-[#AAA] text-xs font-medium tracking-widest uppercase">Scroll</span>
+        <span className="text-[#AAA] text-xs font-medium tracking-widest uppercase">{t("hero.scroll")}</span>
         <div
           className="w-px h-10 bg-gradient-to-b from-[#AAA] to-transparent"
           style={{ animation: "pulse 2s ease-in-out infinite" }}

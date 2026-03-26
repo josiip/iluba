@@ -1,32 +1,53 @@
 import { useReveal } from "../hooks/useReveal";
 import { Heart, Globe2, Award } from "lucide-react";
+import { useTranslation, Trans } from "react-i18next";
 
-const values = [
+const valueIcons = [Heart, Globe2, Award];
+const valueColors = ["#FF5C35", "#0EA5E9", "#8B5CF6"];
+const valueBgs = ["rgba(255,92,53,0.08)", "rgba(14,165,233,0.08)", "rgba(139,92,246,0.08)"];
+
+const founderData = [
   {
-    icon: Heart,
-    title: "Care over output",
-    desc: "We treat every project as if it's our own business on the line. Quality isn't optional — it's the baseline.",
+    name: "Ivan Ljubić",
+    bg: "rgba(13,13,13,0.04)",
+    initials: "SI",
+    color: "#0D0D0D",
+    skills: ["React", "Next.js", "SEO", "Webflow"],
+    image: "https://images.unsplash.com/photo-1762708550141-2688121b9ebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMHByb2Zlc3Npb25hbCUyMG1hbiUyMHBvcnRyYWl0JTIwY3JlYXRpdmV8ZW58MXx8fHwxNzcyNjMyMTA1fDA&ixlib=rb-4.1.0&q=80&w=400",
+  },
+  {
+    name: "Josip Ljubić",
+    bg: "rgba(255,92,53,0.06)",
+    initials: "AK",
     color: "#FF5C35",
-    bg: "rgba(255,92,53,0.08)",
-  },
-  {
-    icon: Globe2,
-    title: "Global perspective",
-    desc: "We've worked with clients across 5+ countries and understand how to design for diverse audiences.",
-    color: "#0EA5E9",
-    bg: "rgba(14,165,233,0.08)",
-  },
-  {
-    icon: Award,
-    title: "Craft at every level",
-    desc: "From pixel-perfect UI to clean code architecture — we don't cut corners, ever.",
-    color: "#8B5CF6",
-    bg: "rgba(139,92,246,0.08)",
+    skills: ["UI/UX", "Brand", "Product"],
+    image: "https://images.unsplash.com/photo-1767439567636-792a76f6e4b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMHByb2Zlc3Npb25hbCUyMHdvbWFuJTIwcG9ydHJhaXQlMjBzdHVkaW98ZW58MXx8fHwxNzcyNjMyMTA1fDA&ixlib=rb-4.1.0&q=80&w=400",
   },
 ];
 
+type ValueTranslation = { title: string; desc: string };
+type StatTranslation = { value: string; label: string };
+type FounderTranslation = { role: string };
+
 export function About() {
   const { ref, visible } = useReveal();
+  const { t } = useTranslation();
+
+  const valuesData = t("about.values", { returnObjects: true }) as ValueTranslation[];
+  const statsData = t("about.stats", { returnObjects: true }) as StatTranslation[];
+  const foundersTranslation = t("about.founders", { returnObjects: true }) as FounderTranslation[];
+
+  const values = valuesData.map((v, i) => ({
+    ...v,
+    icon: valueIcons[i],
+    color: valueColors[i],
+    bg: valueBgs[i],
+  }));
+
+  const founders = founderData.map((f, i) => ({
+    ...f,
+    role: foundersTranslation[i]?.role ?? f.name,
+  }));
 
   return (
     <section
@@ -49,34 +70,28 @@ export function About() {
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
               style={{ background: "rgba(255,92,53,0.08)", color: "#FF5C35" }}
             >
-              About Us
+              {t("about.badge")}
             </div>
             <h2
               className="text-[#0D0D0D] mb-6"
               style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 800, lineHeight: 1.15, letterSpacing: "-0.025em" }}
             >
-              A two-founder studio that punches above its weight.
+              {t("about.heading")}
             </h2>
             <p className="text-[#555] leading-relaxed mb-5" style={{ lineHeight: 1.8 }}>
-              iluba. is an independent digital studio founded by{" "}
-              <strong className="text-[#0D0D0D]">Ivan & Josip</strong> — a developer and a designer
-              who got tired of watching great products fail because of bad digital experiences.
+              <Trans
+                i18nKey="about.p1"
+                components={{ bold: <strong className="text-[#0D0D0D]" /> }}
+              />
             </p>
             <p className="text-[#555] leading-relaxed mb-5" style={{ lineHeight: 1.8 }}>
-              We started iluba. to offer what the big agencies can't: focused attention, genuine craft,
-              and a partnership model where you're always talking to the people doing the actual work.
-              No account managers, no handoffs to junior teams.
+              {t("about.p2")}
             </p>
             <p className="text-[#555] leading-relaxed mb-8" style={{ lineHeight: 1.8 }}>
-              Over the past four years, we've helped startups raise funding, SMEs triple their
-              organic traffic, and founders launch products that their users actually love.
+              {t("about.p3")}
             </p>
             <div className="flex gap-8">
-              {[
-                { value: "4+", label: "Years in business" },
-                { value: "30+", label: "Projects shipped" },
-                { value: "5+", label: "Countries" },
-              ].map((stat) => (
+              {statsData.map((stat) => (
                 <div key={stat.value}>
                   <div
                     className="text-[#0D0D0D]"
@@ -100,26 +115,7 @@ export function About() {
           >
             {/* Founder cards */}
             <div className="grid grid-cols-2 gap-4 mb-6">
-              {[
-                {
-                  name: "Ivan Ljubić",
-                  role: "Co-founder · Dev Lead",
-                  bg: "rgba(13,13,13,0.04)",
-                  initials: "SI",
-                  color: "#0D0D0D",
-                  skills: ["React", "Next.js", "SEO", "Webflow"],
-                 image: "https://images.unsplash.com/photo-1762708550141-2688121b9ebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMHByb2Zlc3Npb25hbCUyMG1hbiUyMHBvcnRyYWl0JTIwY3JlYXRpdmV8ZW58MXx8fHwxNzcyNjMyMTA1fDA&ixlib=rb-4.1.0&q=80&w=400",
-                },
-                {
-                  name: "Josip Ljubić",
-                  role: "Co-founder · Design Lead",
-                  bg: "rgba(255,92,53,0.06)",
-                  initials: "AK",
-                  color: "#FF5C35",
-                  skills: ["UI/UX", "Brand", "Product"],
-                  image: "https://images.unsplash.com/photo-1767439567636-792a76f6e4b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMHByb2Zlc3Npb25hbCUyMHdvbWFuJTIwcG9ydHJhaXQlMjBzdHVkaW98ZW58MXx8fHwxNzcyNjMyMTA1fDA&ixlib=rb-4.1.0&q=80&w=400",
-                },
-              ].map((founder) => (
+              {founders.map((founder) => (
                 <div
                   key={founder.name}
                   className="rounded-2xl overflow-hidden border border-[#EBEBEB] bg-white"
